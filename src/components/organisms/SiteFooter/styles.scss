@@ -1,0 +1,77 @@
+@use '../../../styles/tokens' as tokens;
+@use '../../../styles/mixins' as mixins;
+
+.site-footer {
+  display: grid;
+  gap: tokens.$spacing-xl;
+  padding: tokens.$spacing-2xl 0;
+  border-top: 1px solid var(--color-border);
+
+  @include mixins.media(lg) {
+    grid-template-columns: 1.2fr 1fr auto;
+    align-items: start;
+  }
+
+  &__brand {
+    display: grid;
+    gap: tokens.$spacing-xs;
+  }
+
+  &__eyebrow {
+    color: var(--color-text-heading);
+  }
+
+  &__copy,
+  &__legal,
+  a {
+    color: var(--color-text);
+  }
+
+  &__links {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: tokens.$spacing-xl;
+  }
+
+  &__section {
+    display: grid;
+    gap: tokens.$spacing-sm;
+  }
+
+  &__title {
+    color: var(--color-text-heading);
+  }
+
+  &__list {
+    display: grid;
+    gap: tokens.$spacing-xs;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    a {
+      text-decoration: none;
+
+      &:hover,
+      &:focus-visible {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__meta {
+    display: grid;
+    gap: tokens.$spacing-sm;
+    justify-items: start;
+  }
+
+  &__social {
+    width: 100%;
+  }
+
+  @include mixins.media-max(md) {
+    &__links {
+      grid-template-columns: 1fr;
+    }
+  }
+}

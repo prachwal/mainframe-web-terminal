@@ -1,0 +1,23 @@
+@use '../../../styles/tokens' as tokens;
+
+.about-page {
+  &__hero,
+  &__principles {
+    max-width: 760px;
+  }
+
+  &__principles {
+    margin-top: tokens.$spacing-2xl;
+    padding: tokens.$spacing-xl;
+    border: 1px solid var(--color-border);
+    border-radius: tokens.$radius-xl;
+    background: var(--color-social-bg);
+  }
+
+  &__list {
+    display: grid;
+    gap: tokens.$spacing-sm;
+    margin: tokens.$spacing-md 0 0;
+    padding-left: tokens.$spacing-lg;
+  }
+}

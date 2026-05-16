@@ -4,13 +4,13 @@
 Page
 
 ## Description
-Landing page composed of `MainLayout` with a professional `HeroBanner` and supporting footer/header content.
+Landing page composed of `PageShell` with a professional `HeroBanner`.
 
 ## Route
 `/`
 
 ## Dependencies
-- MainLayout (`templates`)
+- PageShell (`templates`)
 - HeroBanner (`organisms`)
 
 ## Usage Example

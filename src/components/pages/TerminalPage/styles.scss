@@ -1,0 +1,23 @@
+@use '../../../styles/tokens' as tokens;
+
+.terminal-page {
+  &__hero,
+  &__mock {
+    max-width: 760px;
+  }
+
+  &__mock {
+    margin-top: tokens.$spacing-2xl;
+    padding: tokens.$spacing-xl;
+    border-radius: tokens.$radius-xl;
+    border: 1px solid var(--color-border);
+    background: var(--color-code-bg);
+    color: var(--color-text-heading);
+  }
+
+  &__code {
+    margin: tokens.$spacing-sm 0 0;
+    font-family: var(--font-mono);
+    white-space: pre-wrap;
+  }
+}

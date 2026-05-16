@@ -1,37 +1,3 @@
-@use '../../../styles/tokens' as tokens;
-@use '../../../styles/mixins' as mixins;
-
 .home-page {
-  &__header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: tokens.$spacing-md;
-    padding-block: tokens.$spacing-md;
-    min-height: tokens.$spacing-4xl;
-  }
-
-  &__theme-switch {
-    display: inline-flex;
-    align-items: center;
-    gap: tokens.$spacing-xs;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-  }
-
-  &__footer {
-    padding-block: tokens.$spacing-lg;
-    opacity: 0.86;
-  }
-
-  @include mixins.media-max(md) {
-    &__header {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-
-    &__theme-switch {
-      justify-content: flex-start;
-    }
-  }
+  /* Intentionally empty. HomePage is shell-driven via PageShell. */
 }

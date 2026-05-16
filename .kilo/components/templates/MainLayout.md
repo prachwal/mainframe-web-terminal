@@ -15,7 +15,7 @@ App shell wrapper with optional `header` and `footer` slots around the main cont
 | `className` | `string` | ❌ | `''` | Extra wrapper class |
 
 ## Dependencies
-- HeroBanner (`organisms`)
+- none
 
 ## Usage Example
 ```tsx

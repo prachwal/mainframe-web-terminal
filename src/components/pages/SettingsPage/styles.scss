@@ -1,0 +1,25 @@
+@use '../../../styles/tokens' as tokens;
+@use '../../../styles/mixins' as mixins;
+
+.settings-page {
+  &__hero,
+  &__panel {
+    display: grid;
+    gap: tokens.$spacing-sm;
+    max-width: 760px;
+  }
+
+  &__panel {
+    margin-top: tokens.$spacing-2xl;
+    padding: tokens.$spacing-xl;
+    border: 1px solid var(--color-border);
+    border-radius: tokens.$radius-xl;
+    background: var(--color-social-bg);
+  }
+
+  &__choices {
+    display: flex;
+    flex-wrap: wrap;
+    gap: tokens.$spacing-sm;
+  }
+}
