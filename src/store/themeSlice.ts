@@ -1,6 +1,6 @@
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
 import {
-  applyThemeToDocument,
+  ensureThemeDocumentState,
   getStoredThemeMode,
   resolveTheme,
   type ResolvedTheme,
@@ -30,7 +30,7 @@ function readInitialState(): ThemeState {
   const prefersDark = prefersDarkColorScheme();
   const resolved = resolveTheme(mode, prefersDark);
 
-  applyThemeToDocument(mode, resolved);
+  ensureThemeDocumentState(mode, resolved);
 
   return { mode, resolved };
 }
@@ -46,12 +46,12 @@ const themeSlice = createSlice({
       const prefersDark = prefersDarkColorScheme();
       state.resolved = resolveTheme(state.mode, prefersDark);
       window.localStorage.setItem(THEME_STORAGE_KEY, state.mode);
-      applyThemeToDocument(state.mode, state.resolved);
+      ensureThemeDocumentState(state.mode, state.resolved);
     },
     syncSystemTheme(state) {
       const prefersDark = prefersDarkColorScheme();
       state.resolved = resolveTheme(state.mode, prefersDark);
-      applyThemeToDocument(state.mode, state.resolved);
+      ensureThemeDocumentState(state.mode, state.resolved);
     },
   },
 });

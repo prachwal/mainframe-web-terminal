@@ -80,6 +80,7 @@ Registry format (per component):
 - Any change to `src/store/**`, `src/theme.ts`, or other state/persistence logic.
 - Any bug fix where a regression test can prevent the same issue from returning.
 - Any new helper or utility with branching logic.
+- Any change that affects theme, layout, or color surfaces must also satisfy the theme contract in `.kilo/rules/theme-contract.md`.
 
 ### Test Setup
 

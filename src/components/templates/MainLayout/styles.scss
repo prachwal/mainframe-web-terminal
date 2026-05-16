@@ -1,5 +1,4 @@
 @use '../../../styles/tokens' as tokens;
-@use '../../../styles/mixins' as mixins;
 
 .main-layout {
   display: flex;
@@ -10,20 +9,12 @@
 
   &__header,
   &__footer {
-    padding-inline: tokens.$spacing-2xl;
-
-    @include mixins.media(lg) {
-      padding-inline: tokens.$spacing-3xl;
-    }
+    padding-inline: clamp(tokens.$spacing-lg, 4vw, tokens.$spacing-3xl);
   }
 
   &__content {
     flex: 1;
-    padding: tokens.$spacing-2xl;
-    padding-bottom: tokens.$spacing-4xl;
-
-    @include mixins.media(lg) {
-      padding: tokens.$spacing-3xl;
-    }
+    padding: clamp(tokens.$spacing-lg, 4vw, tokens.$spacing-3xl);
+    padding-bottom: clamp(tokens.$spacing-2xl, 6vw, tokens.$spacing-4xl);
   }
 }

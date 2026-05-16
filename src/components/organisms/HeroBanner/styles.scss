@@ -10,7 +10,7 @@
   min-height: min(#{tokens.$spacing-4xl * 10}, calc(100svh - #{tokens.$spacing-4xl + tokens.$spacing-2xl}));
   overflow: hidden;
   border-radius: tokens.$radius-xl;
-  padding: tokens.$spacing-2xl;
+  padding: clamp(tokens.$spacing-xl, 5vw, tokens.$spacing-3xl);
   width: 100%;
   background: var(--hero-surface, #08060d);
   color: var(--hero-on-surface);
@@ -51,7 +51,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: tokens.$spacing-lg;
+    gap: clamp(tokens.$spacing-md, 3vw, tokens.$spacing-lg);
     max-width: 720px;
   }
 
@@ -73,7 +73,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: tokens.$spacing-md;
+    gap: clamp(tokens.$spacing-sm, 2vw, tokens.$spacing-md);
     width: 100%;
 
     @include mixins.media(md) {

@@ -175,6 +175,29 @@ Use via mixin in `mixins/_media.scss`:
 }
 ```
 
+## Interactive Surface Density
+
+Controls that act like compact chips, icon links, or grouped action buttons MUST scale
+mobile-first instead of relying on one-off padding tweaks.
+
+- Default to a smaller touch target on mobile when the control is part of a dense list or
+  social/action cluster.
+- Increase padding, min-height, and spacing at breakpoint boundaries with `@include media(...)`.
+- Prefer shared mixins or CSS custom properties for repeated control surfaces over copy-pasting
+  individual `padding` and `min-height` values into each component.
+- Keep the accessible hit area large enough for pointer input even when the visual treatment is
+  compact.
+
+Recommended patterns:
+
+```scss
+@use '../../../styles/mixins' as mixins;
+
+.chip-link {
+  @include mixins.responsive-control-surface(8px, 8px, 12px, 12px, 40px, 48px);
+}
+```
+
 ## Atomic Design Mapping
 
 | Component Tier | Style Location | Token Usage |

@@ -7,4 +7,4 @@ Fundamental building blocks. Single responsibility, zero internal component depe
 | [Button](./Button.md) | Raw button with variants | implemented |
 | [Heading](./Heading.md) | Semantic heading (h1/h2/h3) | implemented |
 | [Text](./Text.md) | Paragraph / inline text with variants | implemented |
-| [Icon](./Icon.md) | Inline SVG icon with preset paths | implemented |
+| [Icon](./Icon.md) | SVG sprite wrapper with preset symbols | implemented |

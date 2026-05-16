@@ -1,0 +1,18 @@
+@use 'media';
+
+@mixin responsive-control-surface(
+  $mobile-padding-block,
+  $mobile-padding-inline,
+  $desktop-padding-block,
+  $desktop-padding-inline,
+  $mobile-min-height,
+  $desktop-min-height
+) {
+  padding: $mobile-padding-block $mobile-padding-inline;
+  min-height: $mobile-min-height;
+
+  @include media.media(md) {
+    padding: $desktop-padding-block $desktop-padding-inline;
+    min-height: $desktop-min-height;
+  }
+}

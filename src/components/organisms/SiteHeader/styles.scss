@@ -2,16 +2,20 @@
 @use '../../../styles/mixins' as mixins;
 
 .site-header {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
+  position: relative;
+  display: grid;
   gap: tokens.$spacing-md;
-  padding-block: tokens.$spacing-md;
+  padding-block: clamp(tokens.$spacing-sm, 2vw, tokens.$spacing-lg);
+
+  &__bar {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: tokens.$spacing-md;
+  }
 
   &__brand {
-    display: flex;
-    flex-direction: column;
+    display: grid;
     gap: tokens.$spacing-xs;
   }
 
@@ -23,11 +27,13 @@
     color: var(--color-text);
   }
 
-  &__nav {
-    display: flex;
-    flex-wrap: wrap;
-    gap: tokens.$spacing-xs;
-    justify-content: center;
+  &__menuButton {
+    flex-shrink: 0;
+  }
+
+  &__nav,
+  &__status {
+    display: none;
   }
 
   &__link {
@@ -36,6 +42,7 @@
     padding: tokens.$spacing-xs tokens.$spacing-sm;
     border-radius: tokens.$radius-md;
     border: 1px solid transparent;
+    transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
 
     &:hover,
     &:focus-visible {
@@ -50,12 +57,119 @@
     }
   }
 
-  &__status {
+  &__backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 20;
+    border: 0;
+    background: rgba(8, 6, 13, 0.46);
+    opacity: 0;
     pointer-events: none;
+    transition: opacity 0.2s ease;
+
+    &--open {
+      opacity: 1;
+      pointer-events: auto;
+    }
   }
 
-  @include mixins.media-max(md) {
+  &__drawer {
+    position: fixed;
+    inset: 0 0 0 auto;
+    z-index: 30;
+    display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    gap: tokens.$spacing-lg;
+    width: min(88vw, 22rem);
+    padding: clamp(tokens.$spacing-lg, 4vw, tokens.$spacing-2xl);
+    background: var(--color-bg);
+    border-left: 1px solid var(--color-border);
+    box-shadow: 0 24px 48px -24px var(--color-shadow-start);
+    transform: translateX(100%);
+    transition: transform 0.24s ease;
+    overflow-y: auto;
+
+    &--open {
+      transform: translateX(0);
+    }
+  }
+
+  &__drawerHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: tokens.$spacing-md;
+  }
+
+  &__drawerTitle {
+    color: var(--color-text-heading);
+  }
+
+  &__drawerNav {
+    display: grid;
+    gap: tokens.$spacing-xs;
+  }
+
+  &__drawerLink {
+    color: var(--color-text-heading);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border-radius: tokens.$radius-lg;
+    border: 1px solid var(--color-border);
+    background: var(--color-social-bg);
+    @include mixins.responsive-control-surface(
+      tokens.$spacing-sm,
+      tokens.$spacing-md,
+      tokens.$spacing-md,
+      tokens.$spacing-lg,
+      40px,
+      48px
+    );
+
+    &--active {
+      border-color: var(--color-accent-border);
+      background: var(--color-accent-bg);
+      color: var(--color-accent);
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--color-accent);
+      outline-offset: 2px;
+    }
+  }
+
+  &__drawerTheme {
+    margin-top: auto;
+    padding-top: tokens.$spacing-md;
+    border-top: 1px solid var(--color-border);
+  }
+
+  @include mixins.media(lg) {
+    grid-template-columns: 1fr auto auto;
+    align-items: center;
+
+    &__bar {
+      display: contents;
+    }
+
+    &__menuButton,
+    &__backdrop,
+    &__drawer {
+      display: none;
+    }
+
+    &__nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: tokens.$spacing-xs;
+      justify-content: center;
+    }
+
+    &__status {
+      display: inline-flex;
+      pointer-events: none;
+    }
   }
 }

@@ -1,15 +1,22 @@
 @use '../../../styles/tokens' as tokens;
 
 .button {
+  --button-padding-block: #{tokens.$spacing-sm};
+  --button-padding-inline: #{tokens.$spacing-md};
+  --button-min-height: 44px;
+  --button-font-size: #{tokens.$font-size-md};
+  --button-gap: #{tokens.$spacing-sm};
+
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: tokens.$spacing-sm;
+  gap: var(--button-gap);
   font-family: tokens.$font-sans;
-  font-size: tokens.$font-size-md;
+  font-size: var(--button-font-size);
   font-weight: tokens.$font-weight-semibold;
   line-height: tokens.$line-height-normal;
-  padding: tokens.$spacing-sm tokens.$spacing-md;
+  padding: var(--button-padding-block) var(--button-padding-inline);
+  min-height: var(--button-min-height);
   border-radius: tokens.$radius-lg;
   border: 2px solid transparent;
   cursor: pointer;
@@ -49,18 +56,27 @@
   }
 
   &--sm {
-    font-size: tokens.$font-size-sm;
-    padding: tokens.$spacing-xs tokens.$spacing-sm;
+    --button-padding-block: #{tokens.$spacing-xs};
+    --button-padding-inline: #{tokens.$spacing-sm};
+    --button-min-height: 36px;
+    --button-font-size: #{tokens.$font-size-sm};
+    --button-gap: #{tokens.$spacing-xs};
   }
 
   &--md {
-    font-size: tokens.$font-size-md;
-    padding: tokens.$spacing-sm tokens.$spacing-md;
+    --button-padding-block: #{tokens.$spacing-sm};
+    --button-padding-inline: #{tokens.$spacing-md};
+    --button-min-height: 44px;
+    --button-font-size: #{tokens.$font-size-md};
+    --button-gap: #{tokens.$spacing-sm};
   }
 
   &--lg {
-    font-size: tokens.$font-size-lg;
-    padding: tokens.$spacing-md tokens.$spacing-lg;
+    --button-padding-block: #{tokens.$spacing-md};
+    --button-padding-inline: #{tokens.$spacing-lg};
+    --button-min-height: 48px;
+    --button-font-size: #{tokens.$font-size-lg};
+    --button-gap: #{tokens.$spacing-sm};
   }
 
   &:focus-visible {

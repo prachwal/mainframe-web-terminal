@@ -1,4 +1,5 @@
-import { Button, Heading, Text } from '@/components/atoms';
+import { Heading, Text } from '@/components/atoms';
+import { ThemeModeSwitch } from '@/components/molecules';
 import { PageShell } from '@/components/templates/PageShell';
 import { useAppDispatch, useAppSelector } from '@/store';
 import { setThemeMode } from '@/store/themeSlice';
@@ -26,18 +27,7 @@ export function SettingsPage() {
         <Heading level="h2">
           <span id="appearance-title">Appearance</span>
         </Heading>
-        <Text variant="caption" as="span">Theme mode</Text>
-        <div className="settings-page__choices" role="group" aria-label="Theme mode">
-          <Button variant={themeMode === 'light' ? 'secondary' : 'outline'} onClick={() => setMode('light')} aria-pressed={themeMode === 'light'}>
-            Light
-          </Button>
-          <Button variant={themeMode === 'dark' ? 'secondary' : 'outline'} onClick={() => setMode('dark')} aria-pressed={themeMode === 'dark'}>
-            Dark
-          </Button>
-          <Button variant={themeMode === 'system' ? 'secondary' : 'outline'} onClick={() => setMode('system')} aria-pressed={themeMode === 'system'}>
-            System
-          </Button>
-        </div>
+        <ThemeModeSwitch value={themeMode} onChange={setMode} />
       </section>
     </PageShell>
   );

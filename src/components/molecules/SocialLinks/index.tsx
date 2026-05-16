@@ -11,16 +11,23 @@ export interface SocialLink {
 export interface SocialLinksProps {
   links: SocialLink[];
   className?: string;
+  labelMode?: 'visible' | 'sr-only' | 'responsive';
 }
 
-export function SocialLinks({ links, className = '' }: SocialLinksProps) {
+export function SocialLinks({ links, className = '', labelMode = 'visible' }: SocialLinksProps) {
   return (
-    <ul className={`social-links ${className}`.trim()}>
+    <ul className={`social-links social-links--${labelMode} ${className}`.trim()}>
       {links.map((link) => (
         <li key={link.name} className="social-links__item">
-          <a href={link.href} target="_blank" rel="noopener noreferrer" className="social-links__link">
+          <a
+            href={link.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="social-links__link"
+            aria-label={link.name}
+          >
             <Icon name={link.iconName} size="sm" decorative />
-            <span>{link.name}</span>
+            <span className="social-links__label">{link.name}</span>
           </a>
         </li>
       ))}

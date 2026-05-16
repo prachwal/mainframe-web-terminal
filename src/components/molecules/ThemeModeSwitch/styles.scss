@@ -1,0 +1,40 @@
+@use '../../../styles/tokens' as tokens;
+@use '../../../styles/mixins' as mixins;
+
+.theme-mode-switch {
+  display: grid;
+  gap: tokens.$spacing-sm;
+  --button-padding-block: #{tokens.$spacing-xs};
+  --button-padding-inline: #{tokens.$spacing-sm};
+  --button-min-height: 36px;
+  --button-font-size: #{tokens.$font-size-sm};
+  --button-gap: #{tokens.$spacing-xs};
+
+  &__label {
+    color: var(--color-text-heading);
+  }
+
+  &__group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: tokens.$spacing-xs;
+  }
+
+  &__button {
+    min-width: 0;
+  }
+
+  @include mixins.media(md) {
+    --button-padding-block: #{tokens.$spacing-sm};
+    --button-padding-inline: #{tokens.$spacing-md};
+    --button-min-height: 44px;
+    --button-font-size: #{tokens.$font-size-md};
+    --button-gap: #{tokens.$spacing-sm};
+  }
+
+  @include mixins.media(lg) {
+    &__group {
+      gap: tokens.$spacing-sm;
+    }
+  }
+}

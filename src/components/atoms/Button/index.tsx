@@ -1,4 +1,4 @@
-import type { ButtonHTMLAttributes, ReactNode } from 'react';
+import { forwardRef, type ButtonHTMLAttributes, type ReactNode } from 'react';
 import './styles.scss';
 
 export type ButtonVariant = 'primary' | 'secondary' | 'outline';
@@ -15,29 +15,26 @@ export interface ButtonProps
   className?: string;
 }
 
-export function Button({
-  children,
-  variant = 'primary',
-  size = 'md',
-  onClick,
-  type = 'button',
-  disabled = false,
-  className = '',
-  ...rest
-}: ButtonProps) {
+export const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(
+  {
+    children,
+    variant = 'primary',
+    size = 'md',
+    onClick,
+    type = 'button',
+    disabled = false,
+    className = '',
+    ...rest
+  },
+  ref,
+) {
   const classes = ['button', `button--${variant}`, `button--${size}`, className]
     .filter(Boolean)
     .join(' ');
 
   return (
-    <button
-      type={type}
-      className={classes}
-      onClick={onClick}
-      disabled={disabled}
-      {...rest}
-    >
+    <button ref={ref} type={type} className={classes} onClick={onClick} disabled={disabled} {...rest}>
       {children}
     </button>
   );
-}
+});

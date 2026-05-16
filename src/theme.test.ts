@@ -1,9 +1,12 @@
 import { describe, expect, it } from 'vitest';
 import {
   applyThemeToDocument,
+  ensureThemeDocumentState,
   getStoredThemeMode,
   isThemeMode,
+  isThemeDocumentStateSynced,
   THEME_STORAGE_KEY,
+  readThemeDocumentState,
   resolveTheme,
 } from './theme';
 
@@ -28,6 +31,17 @@ describe('theme helpers', () => {
 
     applyThemeToDocument('dark', 'dark');
 
+    expect(readThemeDocumentState()).toEqual({
+      mode: 'dark',
+      resolved: 'dark',
+      colorScheme: 'dark',
+    });
+    expect(isThemeDocumentStateSynced('dark', 'dark')).toBe(true);
+    expect(ensureThemeDocumentState('dark', 'dark')).toEqual({
+      mode: 'dark',
+      resolved: 'dark',
+      colorScheme: 'dark',
+    });
     expect(document.documentElement.dataset.themeMode).toBe('dark');
     expect(document.documentElement.dataset.theme).toBe('dark');
     expect(document.documentElement.style.colorScheme).toBe('dark');

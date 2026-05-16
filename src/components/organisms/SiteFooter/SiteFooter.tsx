@@ -64,7 +64,7 @@ export function SiteFooter() {
       </div>
 
       <div className="site-footer__meta">
-        <SocialLinks links={socialLinks} className="site-footer__social" />
+        <SocialLinks links={socialLinks} className="site-footer__social" labelMode="responsive" />
         <Text variant="caption" as="span" className="site-footer__legal">
           © 2026 Mainframe Web Terminal. All rights reserved.
         </Text>

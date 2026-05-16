@@ -7,10 +7,12 @@ describe('Icon', () => {
     const { container } = render(<Icon name="github" />);
 
     const icon = container.querySelector('svg');
+    const use = container.querySelector('use');
 
     expect(icon).toBeInTheDocument();
     expect(icon).toHaveAttribute('aria-hidden', 'true');
     expect(icon).toHaveAttribute('focusable', 'false');
+    expect(use).toHaveAttribute('href', '/icons.svg#github-icon');
   });
 
   it('exposes an accessible name when requested', () => {

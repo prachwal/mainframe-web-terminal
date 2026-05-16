@@ -6,3 +6,4 @@ Combinations of atoms; self-contained functional units.
 |---|---|---|---|
 | [HeroSection](./HeroSection.md) | Hero block with title, description, CTA | Heading, Text, Button | implemented |
 | [SocialLinks](./SocialLinks.md) | Social media link list | Icon | implemented |
+| [ThemeModeSwitch](./ThemeModeSwitch.md) | Segmented theme mode control | Button, Text | implemented |

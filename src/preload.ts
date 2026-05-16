@@ -1,11 +1,11 @@
 import heroImage from '@/assets/hero.png';
-import { applyThemeToDocument, getStoredThemeMode, resolveTheme } from '@/theme';
+import { ensureThemeDocumentState, getStoredThemeMode, resolveTheme } from '@/theme';
 
 const mode = getStoredThemeMode(window.localStorage);
 const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 const resolved = resolveTheme(mode, prefersDark);
 
-applyThemeToDocument(mode, resolved);
+ensureThemeDocumentState(mode, resolved);
 
 const preload = document.createElement('link');
 preload.rel = 'preload';

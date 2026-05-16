@@ -39,14 +39,14 @@ function createLocalStorage(): Storage {
   } as Storage;
 }
 
-beforeEach(() => {
+function installBrowserShims() {
+  const localStorage = createLocalStorage();
+
   Object.defineProperty(window, 'matchMedia', {
     configurable: true,
     writable: true,
     value: createMatchMedia(false),
   });
-
-  const localStorage = createLocalStorage();
 
   Object.defineProperty(window, 'localStorage', {
     configurable: true,
@@ -59,6 +59,12 @@ beforeEach(() => {
     writable: true,
     value: localStorage,
   });
+}
+
+installBrowserShims();
+
+beforeEach(() => {
+  installBrowserShims();
 });
 
 afterEach(() => {
