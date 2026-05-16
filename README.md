@@ -24,6 +24,25 @@ This app reads public runtime URLs from `.env` / `.env.local` through a single t
 
 See [`.env.example`](./.env.example) for the template.
 
+## Database
+
+This project uses Netlify Database with Drizzle:
+
+- schema: [`db/schema.ts`](./db/schema.ts)
+- runtime client: [`db/index.ts`](./db/index.ts)
+- migrations: [`netlify/database/migrations/`](./netlify/database/migrations)
+
+Useful commands:
+
+```bash
+pnpm db:generate
+pnpm db:migrate
+pnpm db:studio
+```
+
+The active connection string is provided by Netlify as `NETLIFY_DB_URL` in database-enabled
+deploys and local Netlify sessions.
+
 ## Development
 
 ```bash

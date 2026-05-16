@@ -33,3 +33,10 @@ Every step must be tracked in the session's Todo list.
   default and a template for new checkouts.
 - Do not scatter multiple `VITE_*` reads across components when one typed object can carry the same data.
 - If a footer, header, or shared molecule needs a public URL, read it from the runtime config helper.
+
+## Database Flow
+
+- Netlify Database is the default database integration for this repository.
+- Keep the Drizzle schema in `db/schema.ts` and generated migrations in `netlify/database/migrations/`.
+- Use `drizzle-orm/netlify-db` in runtime code and `NETLIFY_DB_URL` for the active connection string.
+- When schema changes land, generate or update migrations before merging the branch.

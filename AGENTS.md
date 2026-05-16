@@ -144,3 +144,12 @@ Registry format (per component):
   and docs URL.
 - Keep the working values in `.env` and mirror them in `.env.example` for new checkouts.
 - When a shared component needs a public URL, prefer the runtime config helper over hardcoded literals.
+
+## Database
+
+- Use Netlify Database as the project database integration.
+- Keep Drizzle schema files in `db/` and migrations in `netlify/database/migrations/`.
+- The runtime Drizzle client should use `drizzle-orm/netlify-db` and the `NETLIFY_DB_URL`
+  connection string supplied by Netlify.
+- Generated migrations live in version control; the `drizzle.config.ts` file is the source of truth
+  for schema and migration paths.
