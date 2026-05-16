@@ -1,6 +1,10 @@
-import { Text } from '@/components/atoms';
+import { Button, Text } from '@/components/atoms';
 import { HeroBanner } from '@/components/organisms';
 import { MainLayout } from '@/components/templates';
+import { useAppDispatch, useAppSelector } from '@/store';
+import { setThemeMode } from '@/store/themeSlice';
+import type { ThemeMode } from '@/theme';
+import './styles.scss';
 
 const socialLinks = [
   { name: 'GitHub', href: 'https://github.com', iconName: 'github' as const },
@@ -9,20 +13,46 @@ const socialLinks = [
 ];
 
 export function HomePage() {
+  const dispatch = useAppDispatch();
+  const themeMode = useAppSelector((state) => state.theme.mode);
+
+  const setMode = (mode: ThemeMode) => {
+    dispatch(setThemeMode(mode));
+  };
+
   return (
     <MainLayout
       header={
         <div className="home-page__header">
-          <Text variant="label" as="span">
-            Mainframe Web Terminal
-          </Text>
+          <Text variant="label" as="span">Mainframe Web Terminal</Text>
+          <div className="home-page__theme-switch" role="group" aria-label="Theme mode">
+            <Button
+              size="sm"
+              variant={themeMode === 'light' ? 'secondary' : 'outline'}
+              onClick={() => setMode('light')}
+            >
+              Light
+            </Button>
+            <Button
+              size="sm"
+              variant={themeMode === 'dark' ? 'secondary' : 'outline'}
+              onClick={() => setMode('dark')}
+            >
+              Dark
+            </Button>
+            <Button
+              size="sm"
+              variant={themeMode === 'system' ? 'secondary' : 'outline'}
+              onClick={() => setMode('system')}
+            >
+              System
+            </Button>
+          </div>
         </div>
       }
       footer={
         <div className="home-page__footer">
-          <Text variant="caption" as="span">
-            Crafted with React 19 and Atomic Design
-          </Text>
+          <Text variant="caption" as="span">Crafted with React 19 and Atomic Design</Text>
         </div>
       }
     >
