@@ -17,3 +17,11 @@ All feature requests and complex tasks MUST follow this lifecycle:
     *   **Merge**: Commit changes and merge back to the main branch.
 
 Every step must be tracked in the session's Todo list.
+
+## Netlify Deployment Flow
+
+- Treat `deployment` as the publishing branch for Netlify.
+- Do not publish from `main` unless the user explicitly overrides that decision.
+- Use Netlify CLI to create or publish the `mainframe-web-terminal` site from the current branch.
+- If the Netlify account contains stale projects for this repository, remove them before creating the new site.
+- Document the branch choice and publish path in `AGENTS.md` and the relevant Kilo rule files.

@@ -74,6 +74,14 @@ Registry format (per component):
 6. **Lint**: `pnpm lint`
 7. **Format**: `pnpm format`
 
+## Netlify Workflow
+
+- Netlify publishing is intentionally tied to the git branch `deployment`, not `main`.
+- Use the Netlify CLI from the `deployment` branch when creating or publishing the site.
+- The canonical site name for this project is `mainframe-web-terminal`.
+- Before a new Netlify publish, remove obsolete projects deliberately and verify the account is clean.
+- Record any Netlify-specific branch or publish decisions in the repository documentation.
+
 ### When Tests Are Required
 
 - Any change to `src/components/**` that affects rendering, props, semantics, or interactivity.
