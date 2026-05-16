@@ -2,27 +2,109 @@
 @use '../../../styles/mixins' as mixins;
 
 .hero-banner {
+  position: relative;
+  isolation: isolate;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: tokens.$spacing-xl;
+  justify-content: flex-end;
+  min-height: min(#{tokens.$spacing-4xl * 10}, calc(100svh - #{tokens.$spacing-4xl + tokens.$spacing-2xl}));
+  overflow: hidden;
+  border-radius: tokens.$radius-xl;
+  padding: tokens.$spacing-2xl;
   width: 100%;
+  background: var(--color-text-heading);
+  color: var(--color-bg);
 
-  @include mixins.media(lg) {
-    gap: tokens.$spacing-2xl;
+  @include mixins.media(md) {
+    min-height: tokens.$spacing-4xl * 9;
+    padding: tokens.$spacing-3xl;
   }
 
-  &__figure {
-    margin: 0;
+  &__media {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
     width: 100%;
-    display: flex;
-    justify-content: center;
+    height: 100%;
+    object-fit: cover;
+    object-position: 76% center;
+    image-rendering: auto;
+    transform: scale(1.08);
   }
 
-  &__image {
-    width: min(100%, 420px);
-    border-radius: tokens.$radius-xl;
-    box-shadow: var(--color-shadow-start) 0 24px 48px -16px,
-      var(--color-shadow-end) 0 16px 32px -16px;
+  &__shade {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background:
+      linear-gradient(90deg, rgba(tokens.$color-gray-900, 0.96) 0%, rgba(tokens.$color-gray-900, 0.82) 46%, rgba(tokens.$color-gray-900, 0.42) 100%),
+      linear-gradient(0deg, rgba(tokens.$color-gray-900, 0.9) 0%, rgba(tokens.$color-gray-900, 0.08) 54%);
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: tokens.$spacing-lg;
+    max-width: 720px;
+  }
+
+  &__eyebrow {
+    color: var(--color-accent);
+  }
+
+  &__title {
+    color: var(--color-bg);
+    max-width: 700px;
+  }
+
+  &__subtitle {
+    max-width: 620px;
+    color: rgba(tokens.$color-white, 0.82);
+  }
+
+  &__actions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: tokens.$spacing-md;
+    width: 100%;
+
+    @include mixins.media(md) {
+      flex-direction: row;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+  }
+
+  &__signals {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: tokens.$spacing-sm;
+    width: 100%;
+    max-width: 560px;
+    margin-top: tokens.$spacing-xl;
+
+    @include mixins.media(md) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    div {
+      border-left: 2px solid var(--color-accent);
+      padding-left: tokens.$spacing-md;
+    }
+
+    dt {
+      color: var(--color-bg);
+      font-weight: tokens.$font-weight-bold;
+      line-height: tokens.$line-height-normal;
+    }
+
+    dd {
+      margin: 0;
+      color: rgba(tokens.$color-white, 0.68);
+      font-size: tokens.$font-size-sm;
+      line-height: tokens.$line-height-normal;
+    }
   }
 }

@@ -4,7 +4,7 @@
 Page
 
 ## Description
-Landing page composed of `MainLayout` with `HeroBanner` and supporting footer/header content.
+Landing page composed of `MainLayout` with a professional `HeroBanner` and supporting footer/header content.
 
 ## Route
 `/`

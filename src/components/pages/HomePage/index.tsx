@@ -1,11 +1,11 @@
-import { Button, Text } from '@/components/atoms';
+import { Text } from '@/components/atoms';
 import { HeroBanner } from '@/components/organisms';
 import { MainLayout } from '@/components/templates';
 
 const socialLinks = [
   { name: 'GitHub', href: 'https://github.com', iconName: 'github' as const },
-  { name: 'Twitter', href: 'https://x.com', iconName: 'twitter' as const },
-  { name: 'LinkedIn', href: 'https://linkedin.com', iconName: 'linkedin' as const },
+  { name: 'Docs', href: 'https://vite.dev', iconName: 'documentation' as const },
+  { name: 'Community', href: 'https://react.dev', iconName: 'social' as const },
 ];
 
 export function HomePage() {
@@ -27,25 +27,19 @@ export function HomePage() {
       }
     >
       <HeroBanner
-        title="Get started"
+        eyebrow="Production terminal interface"
+        title="Mainframe Web Terminal"
         subtitle={
           <>
-            Edit <code>src/App.tsx</code> and save to test <code>HMR</code>.
+            A composed React 19 command surface with Atomic Design components, SCSS tokens,
+            and fast Vite delivery for focused operator workflows.
           </>
         }
         cta={{
-          label: 'Explore the terminal',
+          label: 'Launch terminal',
         }}
         socialLinks={socialLinks}
       />
-      <div className="home-page__actions">
-        <Button variant="secondary" size="lg">
-          Open settings
-        </Button>
-        <Button variant="outline" size="lg">
-          Read docs
-        </Button>
-      </div>
     </MainLayout>
   );
 }
