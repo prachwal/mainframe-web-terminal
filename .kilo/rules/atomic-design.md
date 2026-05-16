@@ -106,6 +106,8 @@ One-sentence purpose.
 - `reviewer` subagent MUST verify that new components are registered.
 - `reviewer` subagent MUST verify import directions (no upward imports).
 - `reviewer` subagent MUST verify that atoms remain dependency-free within the project.
+- `reviewer` subagent MUST verify accessible color contrast for text, controls, and UI surfaces. Default target: WCAG AA, 4.5:1 for normal text and 3:1 for large text and non-text controls.
+- `reviewer` subagent MUST verify semantic HTML and ARIA only where needed; decorative icons should stay decorative, and interactive controls must expose correct labels and states.
 - Missing registry documentation is a **blocking** review comment.
 
 ## Exceptions

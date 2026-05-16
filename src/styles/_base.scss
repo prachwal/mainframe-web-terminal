@@ -22,6 +22,14 @@
   --hero-overlay-mid: rgba(#{$color-gray-900}, 0.82);
   --hero-overlay-soft: rgba(#{$color-gray-900}, 0.42);
   --hero-accent: #{$color-accent-dark};
+  --hero-chip-bg: rgba(#{$color-white}, 0.1);
+  --hero-chip-border: rgba(#{$color-white}, 0.18);
+  --hero-chip-text: #{$color-white};
+  --hero-chip-shadow: rgba(#{$color-gray-900}, 0.18);
+  --button-secondary-bg: rgba(#{$color-white}, 0.08);
+  --button-secondary-hover: rgba(#{$color-white}, 0.14);
+  --button-outline-border: rgba(#{$color-white}, 0.26);
+  --button-outline-hover: rgba(#{$color-white}, 0.1);
 
   // Typography
   --font-sans: #{$font-sans};
@@ -60,6 +68,14 @@
   --hero-overlay-mid: rgba(#{$color-white}, 0.74);
   --hero-overlay-soft: rgba(#{$color-white}, 0.3);
   --hero-accent: #{$color-accent};
+  --hero-chip-bg: rgba(#{$color-gray-900}, 0.04);
+  --hero-chip-border: rgba(#{$color-gray-900}, 0.12);
+  --hero-chip-text: #{$color-gray-900};
+  --hero-chip-shadow: rgba(#{$color-gray-900}, 0.08);
+  --button-secondary-bg: rgba(#{$color-gray-900}, 0.04);
+  --button-secondary-hover: rgba(#{$color-gray-900}, 0.08);
+  --button-outline-border: rgba(#{$color-gray-900}, 0.16);
+  --button-outline-hover: rgba(#{$color-gray-900}, 0.06);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -83,5 +99,13 @@
     --hero-overlay-mid: rgba(#{$color-white}, 0.74);
     --hero-overlay-soft: rgba(#{$color-white}, 0.3);
     --hero-accent: #{$color-accent};
+    --hero-chip-bg: rgba(#{$color-gray-900}, 0.04);
+    --hero-chip-border: rgba(#{$color-gray-900}, 0.12);
+    --hero-chip-text: #{$color-gray-900};
+    --hero-chip-shadow: rgba(#{$color-gray-900}, 0.08);
+    --button-secondary-bg: rgba(#{$color-gray-900}, 0.04);
+    --button-secondary-hover: rgba(#{$color-gray-900}, 0.08);
+    --button-outline-border: rgba(#{$color-gray-900}, 0.16);
+    --button-outline-hover: rgba(#{$color-gray-900}, 0.06);
   }
 }

@@ -38,6 +38,7 @@ import { HeroBanner } from '@/components/organisms/HeroBanner';
 - Uses semantic `<section>` with `aria-labelledby`.
 - Background media is decorative and hidden from assistive technology.
 - CTA is a native `<button>`, and social links remain semantic anchors.
+- Hero surface and signal chips are theme-aware and must maintain WCAG AA contrast in both light and dark modes.
 
 ## Styling
 Co-located: `src/components/organisms/HeroBanner/styles.scss`

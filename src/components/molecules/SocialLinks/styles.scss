@@ -25,7 +25,8 @@
     display: flex;
     padding: tokens.$spacing-sm tokens.$spacing-md;
     border-radius: tokens.$radius-lg;
-    background: var(--color-social-bg);
+    background: var(--hero-chip-bg);
+    border: 1px solid var(--hero-chip-border);
     align-items: center;
     gap: tokens.$spacing-sm;
     transition: box-shadow 0.3s;
@@ -33,7 +34,7 @@
 
     span {
       font-size: tokens.$font-size-md;
-      color: var(--color-text-heading);
+      color: var(--hero-chip-text);
     }
 
     @include mixins.media(lg) {
@@ -43,8 +44,8 @@
     }
 
     &:hover {
-      box-shadow: var(--color-shadow-start) 0 4px 6px -2px,
-        var(--color-shadow-end) 0 2px 4px -2px;
+      box-shadow: var(--hero-chip-shadow) 0 4px 6px -2px,
+        var(--hero-chip-shadow) 0 2px 4px -2px;
     }
   }
 }

@@ -90,8 +90,11 @@
     }
 
     div {
-      border-left: 2px solid var(--hero-accent);
-      padding-left: tokens.$spacing-md;
+      border: 1px solid var(--hero-chip-border);
+      border-radius: tokens.$radius-lg;
+      background: var(--hero-chip-bg);
+      padding: tokens.$spacing-md;
+      box-shadow: 0 12px 24px -24px var(--hero-chip-shadow);
     }
 
     dt {

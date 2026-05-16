@@ -31,21 +31,20 @@
 
   &--secondary {
     color: var(--color-text-heading);
-    background: var(--color-social-bg);
+    background: var(--button-secondary-bg);
 
     &:hover:not(:disabled) {
-      box-shadow: var(--color-shadow-start) 0 4px 6px -2px,
-        var(--color-shadow-end) 0 2px 4px -2px;
+      background: var(--button-secondary-hover);
     }
   }
 
   &--outline {
     color: var(--color-text-heading);
     background: transparent;
-    border-color: var(--color-border);
+    border-color: var(--button-outline-border);
 
     &:hover:not(:disabled) {
-      background: var(--color-social-bg);
+      background: var(--button-outline-hover);
     }
   }
 

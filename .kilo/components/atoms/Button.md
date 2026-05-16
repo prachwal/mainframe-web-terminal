@@ -34,6 +34,7 @@ import { Button } from '@/components/atoms/Button';
 - Native `<button>` element, keyboard-focusable.
 - `focus-visible` outline in SCSS.
 - Disabled state handled natively.
+- Button foreground/background pairs must preserve WCAG AA contrast in both themes.
 
 ## Styling
 Co-located: `src/components/atoms/Button/styles.scss`
