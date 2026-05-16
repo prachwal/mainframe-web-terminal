@@ -22,6 +22,7 @@ export function HomePage() {
 
   return (
     <MainLayout
+      className="home-page"
       header={
         <div className="home-page__header">
           <Text variant="label" as="span">Mainframe Web Terminal</Text>
@@ -30,6 +31,8 @@ export function HomePage() {
               size="sm"
               variant={themeMode === 'light' ? 'secondary' : 'outline'}
               onClick={() => setMode('light')}
+              disabled={themeMode === 'light'}
+              aria-pressed={themeMode === 'light'}
             >
               Light
             </Button>
@@ -37,6 +40,8 @@ export function HomePage() {
               size="sm"
               variant={themeMode === 'dark' ? 'secondary' : 'outline'}
               onClick={() => setMode('dark')}
+              disabled={themeMode === 'dark'}
+              aria-pressed={themeMode === 'dark'}
             >
               Dark
             </Button>
@@ -44,6 +49,8 @@ export function HomePage() {
               size="sm"
               variant={themeMode === 'system' ? 'secondary' : 'outline'}
               onClick={() => setMode('system')}
+              disabled={themeMode === 'system'}
+              aria-pressed={themeMode === 'system'}
             >
               System
             </Button>

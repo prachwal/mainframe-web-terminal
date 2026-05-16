@@ -12,6 +12,7 @@ App shell wrapper with optional `header` and `footer` slots around the main cont
 | `header` | `ReactNode` | ❌ | — | Optional header slot |
 | `children` | `ReactNode` | ✅ | — | Page content inside `<main>` |
 | `footer` | `ReactNode` | ❌ | — | Optional footer slot |
+| `className` | `string` | ❌ | `''` | Extra wrapper class |
 
 ## Dependencies
 - HeroBanner (`organisms`)

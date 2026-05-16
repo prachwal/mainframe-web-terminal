@@ -1,10 +1,11 @@
-import type { ReactNode } from 'react';
+import type { ButtonHTMLAttributes, ReactNode } from 'react';
 import './styles.scss';
 
 export type ButtonVariant = 'primary' | 'secondary' | 'outline';
 export type ButtonSize = 'sm' | 'md' | 'lg';
 
-export interface ButtonProps {
+export interface ButtonProps
+  extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'children' | 'type' | 'disabled'> {
   children: ReactNode;
   variant?: ButtonVariant;
   size?: ButtonSize;
@@ -22,6 +23,7 @@ export function Button({
   type = 'button',
   disabled = false,
   className = '',
+  ...rest
 }: ButtonProps) {
   const classes = ['button', `button--${variant}`, `button--${size}`, className]
     .filter(Boolean)
@@ -33,6 +35,7 @@ export function Button({
       className={classes}
       onClick={onClick}
       disabled={disabled}
+      {...rest}
     >
       {children}
     </button>
