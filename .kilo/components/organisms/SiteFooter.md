@@ -30,6 +30,7 @@ import { SiteFooter } from '@/components/organisms/SiteFooter';
 ## Styling
 Co-located: `src/components/organisms/SiteFooter/styles.scss`
 Mobile-first grid with icon-only social links.
+- External footer URLs should come from the typed runtime config object, not hardcoded literals.
 - Footer navigation should focus on secondary destination groups such as resources, support, and legal.
 - Footer nav links use a smaller, specialized typographic scale (`tokens.$font-size-sm`) so they stay
   visually lighter than the primary header navigation.

@@ -137,3 +137,10 @@ Registry format (per component):
 - Always reference design tokens; never hard-code raw values.
 - Prefer plain SCSS; use CSS Modules only when scoping is required.
 - Follow the full architecture in `.kilo/rules/scss.md`.
+
+## Runtime Config
+
+- Use a single typed runtime config object for public URLs such as the Netlify site URL, GitHub URL,
+  and docs URL.
+- Keep the working values in `.env` and mirror them in `.env.example` for new checkouts.
+- When a shared component needs a public URL, prefer the runtime config helper over hardcoded literals.

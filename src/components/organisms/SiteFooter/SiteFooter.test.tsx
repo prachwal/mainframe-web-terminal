@@ -1,6 +1,7 @@
 import { render, screen, within } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import { describe, expect, it } from 'vitest';
+import { runtimeConfig } from '@/config/runtimeConfig';
 import { SiteFooter } from './SiteFooter';
 
 describe('SiteFooter', () => {
@@ -16,12 +17,12 @@ describe('SiteFooter', () => {
     expect(
       screen
         .getAllByRole('link', { name: 'GitHub' })
-        .find((link) => link.getAttribute('href') === 'https://github.com'),
+        .find((link) => link.getAttribute('href') === runtimeConfig.githubUrl),
     ).toBeInTheDocument();
     expect(
       screen
         .getAllByRole('link', { name: 'Docs' })
-        .find((link) => link.getAttribute('href') === 'https://vite.dev'),
+        .find((link) => link.getAttribute('href') === runtimeConfig.docsUrl),
     ).toBeInTheDocument();
     expect(screen.getByRole('link', { name: 'Contact' })).toHaveAttribute('href', '/contact');
     expect(screen.getByRole('link', { name: 'Accessibility' })).toHaveAttribute(

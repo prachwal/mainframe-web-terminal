@@ -1,73 +1,49 @@
-# React + TypeScript + Vite
+# Mainframe Web Terminal
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[![Netlify Status](https://api.netlify.com/api/v1/badges/549ea8d0-99dd-4059-8c96-da2144b78dde/deploy-status)](https://app.netlify.com/projects/mainframe-web-terminal/deploys)
+[![GitHub](https://img.shields.io/badge/GitHub-mainframe--web--terminal-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/prachwal/mainframe-web-terminal)
+[![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=vite&logoColor=white)](https://vite.dev)
+[![React 19](https://img.shields.io/badge/React%2019-61DAFB?style=flat-square&logo=react&logoColor=black)](https://react.dev)
 
-Currently, two official plugins are available:
+Mainframe Web Terminal is a React 19 + Vite workspace for a theme-aware terminal UI.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## What Lives Here
 
-## React Compiler
+- Atomic Design component structure
+- theme-aware mobile-first navigation
+- shared sprite icons
+- Netlify deployment from the `deployment` branch
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Configuration
 
-## Expanding the ESLint configuration
+This app reads public runtime URLs from `.env` / `.env.local` through a single typed config object:
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- `VITE_SITE_URL`
+- `VITE_GITHUB_URL`
+- `VITE_DOCS_URL`
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+See [`.env.example`](./.env.example) for the template.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Development
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+pnpm install
+pnpm dev
+pnpm test
+pnpm lint
+pnpm build
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Deployment
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- Netlify site: https://mainframe-web-terminal.netlify.app
+- GitHub repository: https://github.com/prachwal/mainframe-web-terminal
+- Publishing branch: `deployment`
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Tooling
+
+- React 19
+- Vite
+- TypeScript
+- Vitest
+- React Testing Library

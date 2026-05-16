@@ -3,6 +3,14 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://mainframe-web-terminal.netlify.app",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/prachwal/mainframe-web-terminal.git"
+  },
+  "bugs": {
+    "url": "https://github.com/prachwal/mainframe-web-terminal/issues"
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",

@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { SocialLinks } from '@/components/molecules';
 import type { SocialLink } from '@/components/molecules';
 import { Text } from '@/components/atoms';
+import { runtimeConfig } from '@/config/runtimeConfig';
 import './styles.scss';
 
 type FooterLinkItem = {
@@ -19,8 +20,8 @@ const footerLinks: FooterSection[] = [
   {
     title: 'Resources',
     items: [
-      { label: 'Docs', to: 'https://vite.dev', external: true },
-      { label: 'GitHub', to: 'https://github.com', external: true },
+      { label: 'Docs', to: runtimeConfig.docsUrl, external: true },
+      { label: 'GitHub', to: runtimeConfig.githubUrl, external: true },
     ],
   },
   {
@@ -41,8 +42,8 @@ const footerLinks: FooterSection[] = [
 ];
 
 const socialLinks: SocialLink[] = [
-  { name: 'GitHub', href: 'https://github.com', iconName: 'github' },
-  { name: 'Docs', href: 'https://vite.dev', iconName: 'documentation' },
+  { name: 'GitHub', href: runtimeConfig.githubUrl, iconName: 'github' },
+  { name: 'Docs', href: runtimeConfig.docsUrl, iconName: 'documentation' },
   { name: 'Community', href: 'https://react.dev', iconName: 'social' },
 ];
 

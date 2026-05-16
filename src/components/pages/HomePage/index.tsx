@@ -1,10 +1,11 @@
 import { useNavigate } from 'react-router-dom';
+import { runtimeConfig } from '@/config/runtimeConfig';
 import { HeroBanner } from '@/components/organisms';
 import { PageShell } from '@/components/templates/PageShell';
 
 const socialLinks = [
-  { name: 'GitHub', href: 'https://github.com', iconName: 'github' as const },
-  { name: 'Docs', href: 'https://vite.dev', iconName: 'documentation' as const },
+  { name: 'GitHub', href: runtimeConfig.githubUrl, iconName: 'github' as const },
+  { name: 'Docs', href: runtimeConfig.docsUrl, iconName: 'documentation' as const },
   { name: 'Community', href: 'https://react.dev', iconName: 'social' as const },
 ];
 

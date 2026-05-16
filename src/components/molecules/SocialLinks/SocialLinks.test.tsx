@@ -1,5 +1,6 @@
 import { render, within } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
+import { runtimeConfig } from '@/config/runtimeConfig';
 import { SocialLinks } from './index';
 
 describe('SocialLinks', () => {
@@ -8,8 +9,8 @@ describe('SocialLinks', () => {
       <SocialLinks
         labelMode="responsive"
         links={[
-          { name: 'GitHub', href: 'https://github.com', iconName: 'github' },
-          { name: 'Docs', href: 'https://vite.dev', iconName: 'documentation' },
+          { name: 'GitHub', href: runtimeConfig.githubUrl, iconName: 'github' },
+          { name: 'Docs', href: runtimeConfig.docsUrl, iconName: 'documentation' },
         ]}
       />,
     );
@@ -17,9 +18,9 @@ describe('SocialLinks', () => {
 
     expect(scoped.getByRole('link', { name: 'GitHub' })).toHaveAttribute(
       'href',
-      'https://github.com',
+      runtimeConfig.githubUrl,
     );
-    expect(scoped.getByRole('link', { name: 'Docs' })).toHaveAttribute('href', 'https://vite.dev');
+    expect(scoped.getByRole('link', { name: 'Docs' })).toHaveAttribute('href', runtimeConfig.docsUrl);
     expect(scoped.getByText('GitHub')).toHaveClass('social-links__label');
     expect(scoped.getByText('Docs')).toHaveClass('social-links__label');
   });
@@ -29,8 +30,8 @@ describe('SocialLinks', () => {
       <SocialLinks
         labelMode="icon-only"
         links={[
-          { name: 'GitHub', href: 'https://github.com', iconName: 'github' },
-          { name: 'Docs', href: 'https://vite.dev', iconName: 'documentation' },
+          { name: 'GitHub', href: runtimeConfig.githubUrl, iconName: 'github' },
+          { name: 'Docs', href: runtimeConfig.docsUrl, iconName: 'documentation' },
         ]}
       />,
     );
@@ -38,9 +39,9 @@ describe('SocialLinks', () => {
 
     expect(scoped.getByRole('link', { name: 'GitHub' })).toHaveAttribute(
       'href',
-      'https://github.com',
+      runtimeConfig.githubUrl,
     );
-    expect(scoped.getByRole('link', { name: 'Docs' })).toHaveAttribute('href', 'https://vite.dev');
+    expect(scoped.getByRole('link', { name: 'Docs' })).toHaveAttribute('href', runtimeConfig.docsUrl);
     expect(scoped.queryByText('GitHub')).not.toBeInTheDocument();
     expect(scoped.queryByText('Docs')).not.toBeInTheDocument();
   });
