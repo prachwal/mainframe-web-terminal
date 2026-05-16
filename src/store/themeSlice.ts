@@ -13,13 +13,21 @@ export interface ThemeState {
   resolved: ResolvedTheme;
 }
 
+function prefersDarkColorScheme(): boolean {
+  if (typeof window === 'undefined' || typeof window.matchMedia !== 'function') {
+    return false;
+  }
+
+  return window.matchMedia('(prefers-color-scheme: dark)').matches;
+}
+
 function readInitialState(): ThemeState {
   if (typeof window === 'undefined') {
     return { mode: 'system', resolved: 'light' };
   }
 
   const mode = getStoredThemeMode(window.localStorage);
-  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const prefersDark = prefersDarkColorScheme();
   const resolved = resolveTheme(mode, prefersDark);
 
   applyThemeToDocument(mode, resolved);
@@ -35,13 +43,13 @@ const themeSlice = createSlice({
   reducers: {
     setThemeMode(state, action: PayloadAction<ThemeMode>) {
       state.mode = action.payload;
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const prefersDark = prefersDarkColorScheme();
       state.resolved = resolveTheme(state.mode, prefersDark);
       window.localStorage.setItem(THEME_STORAGE_KEY, state.mode);
       applyThemeToDocument(state.mode, state.resolved);
     },
     syncSystemTheme(state) {
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const prefersDark = prefersDarkColorScheme();
       state.resolved = resolveTheme(state.mode, prefersDark);
       applyThemeToDocument(state.mode, state.resolved);
     },

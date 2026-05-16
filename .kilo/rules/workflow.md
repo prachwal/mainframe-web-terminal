@@ -12,7 +12,7 @@ All feature requests and complex tasks MUST follow this lifecycle:
     *   **Phase Planning**: Detailed steps for the specific phase.
     *   **Branching**: `git checkout -b feature/phase-name`.
     *   **Implementation (`code`)**: Write code following project standards (React 19, TS).
-    *   **Testing**: Run `pnpm lint` and any relevant tests.
+    *   **Testing**: Run `pnpm lint`, `pnpm test`, and any relevant targeted tests.
     *   **Review (`reviewer`)**: High-reasoning review of the changes.
     *   **Merge**: Commit changes and merge back to the main branch.
 

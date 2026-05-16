@@ -7,6 +7,7 @@ Atom
 Interactive element with three visual variants: primary (accent), secondary (subtle), outline (transparent).
 
 ## Props
+
 | Prop | Type | Required | Default | Description |
 |---|---|---|---|---|
 | `children` | `ReactNode` | ✅ | — | Button label |
@@ -22,6 +23,7 @@ Interactive element with three visual variants: primary (accent), secondary (sub
 - **Internal**: none
 
 ## Usage Example
+
 ```tsx
 import { Button } from '@/components/atoms/Button';
 
@@ -31,6 +33,7 @@ import { Button } from '@/components/atoms/Button';
 ```
 
 ## Accessibility
+
 - Native `<button>` element, keyboard-focusable.
 - `focus-visible` outline in SCSS.
 - Disabled state handled natively.
@@ -38,13 +41,17 @@ import { Button } from '@/components/atoms/Button';
 - Prefer explicit `aria-pressed` only for toggle semantics; do not fake inactive states with `disabled`.
 
 ## Styling
+
 Co-located: `src/components/atoms/Button/styles.scss`
 Uses design tokens from `src/styles/tokens/` via `@use`.
 
 ## Testing
-Add tests as needed in `src/components/atoms/Button/Button.test.tsx`.
+
+Unit tests live in `src/components/atoms/Button/Button.test.tsx`.
+Cover native attribute passthrough, disabled behavior, and click handling.
 
 ## Change Log
+
 | Date | Change | Commit |
 |---|---|---|
 | — | Initial implementation | 0b9d504 |

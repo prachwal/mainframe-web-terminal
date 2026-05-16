@@ -8,10 +8,12 @@ export const store = configureStore({
   },
 });
 
-const systemThemeMedia = window.matchMedia('(prefers-color-scheme: dark)');
-systemThemeMedia.addEventListener('change', () => {
-  store.dispatch(syncSystemTheme());
-});
+if (typeof window !== 'undefined' && typeof window.matchMedia === 'function') {
+  const systemThemeMedia = window.matchMedia('(prefers-color-scheme: dark)');
+  systemThemeMedia.addEventListener('change', () => {
+    store.dispatch(syncSystemTheme());
+  });
+}
 
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;

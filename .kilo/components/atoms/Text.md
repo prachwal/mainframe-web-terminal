@@ -7,6 +7,7 @@ Atom
 Paragraph or inline text element with visual variants: body, caption, label.
 
 ## Props
+
 | Prop | Type | Required | Default | Description |
 |---|---|---|---|---|
 | `children` | `ReactNode` | ✅ | — | Text content |
@@ -19,6 +20,7 @@ Paragraph or inline text element with visual variants: body, caption, label.
 - **Internal**: none
 
 ## Usage Example
+
 ```tsx
 import { Text } from '@/components/atoms/Text';
 
@@ -28,13 +30,21 @@ import { Text } from '@/components/atoms/Text';
 ```
 
 ## Accessibility
+
 - Uses semantic HTML (`<p>` by default).
 - `code` variant uses `inline` display and monospace font.
 
 ## Styling
+
 Co-located: `src/components/atoms/Text/styles.scss`
 
+## Testing
+
+Unit tests live in `src/components/atoms/Text/Text.test.tsx`.
+Cover default paragraph rendering and variant element overrides.
+
 ## Change Log
+
 | Date | Change | Commit |
 |---|---|---|
 | — | Initial implementation | 0b9d504 |

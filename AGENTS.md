@@ -69,9 +69,23 @@ Registry format (per component):
 1. **Install dependencies**: `pnpm install`
 2. **Run dev server**: `pnpm dev`
 3. **Build**: `pnpm build`
-4. **Preview**: `pnpm preview`
-5. **Lint**: `pnpm lint`
-6. **Format**: `pnpm format`
+4. **Test**: `pnpm test`
+5. **Preview**: `pnpm preview`
+6. **Lint**: `pnpm lint`
+7. **Format**: `pnpm format`
+
+### When Tests Are Required
+
+- Any change to `src/components/**` that affects rendering, props, semantics, or interactivity.
+- Any change to `src/store/**`, `src/theme.ts`, or other state/persistence logic.
+- Any bug fix where a regression test can prevent the same issue from returning.
+- Any new helper or utility with branching logic.
+
+### Test Setup
+
+- Vitest and React Testing Library are the default unit test stack.
+- Shared test bootstrap lives in `src/test/setup.ts`.
+- Prefer co-located tests: `ComponentName.test.tsx` next to the component or `module.test.ts` next to the module.
 
 ## Git & Commit Conventions
 

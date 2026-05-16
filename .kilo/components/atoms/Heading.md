@@ -7,6 +7,7 @@ Atom
 Semantic heading element (`h1` through `h6`) with responsive font sizing.
 
 ## Props
+
 | Prop | Type | Required | Default | Description |
 |---|---|---|---|---|
 | `level` | `'h1' \| 'h2' \| 'h3' \| 'h4' \| 'h5' \| 'h6'` | ❌ | `'h1'` | HTML heading level |
@@ -18,6 +19,7 @@ Semantic heading element (`h1` through `h6`) with responsive font sizing.
 - **Internal**: none
 
 ## Usage Example
+
 ```tsx
 import { Heading } from '@/components/atoms/Heading';
 
@@ -27,16 +29,21 @@ import { Heading } from '@/components/atoms/Heading';
 ```
 
 ## Accessibility
+
 - Renders proper semantic HTML tags.
 - Color contrast follows dark-mode token defaults.
 
 ## Styling
+
 Co-located: `src/components/atoms/Heading/styles.scss`
 
 ## Testing
-Add tests as needed in `src/components/atoms/Heading/Heading.test.tsx`.
+
+Unit tests live in `src/components/atoms/Heading/Heading.test.tsx`.
+Cover semantic heading levels and rendered text.
 
 ## Change Log
+
 | Date | Change | Commit |
 |---|---|---|
 | — | Initial implementation | 0b9d504 |

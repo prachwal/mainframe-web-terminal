@@ -37,7 +37,7 @@ Before writing a single component file, the `code` subagent MUST:
 
 ### Registry Structure
 
-```
+```text
 .kilo/components/
 ├── index.md                 # Master index: list of all tiers and component names
 ├── atoms/
@@ -71,6 +71,7 @@ Atom / Molecule / Organism / Template / Page
 One-sentence purpose.
 
 ## Props
+
 | Prop | Type | Required | Default | Description |
 |---|---|---|---|---|
 
@@ -79,9 +80,9 @@ One-sentence purpose.
 - External: `<List of external libraries>`
 
 ## Usage Example
-```tsx
+~~~tsx
 // Minimal, copy-pasteable example
-```
+~~~
 
 ## Accessibility
 - Keyboard navigation
@@ -97,8 +98,10 @@ One-sentence purpose.
 - Key user flows to verify
 
 ## Change Log
+
 | Date | Change | Commit |
 |---|---|---|
+
 ```
 
 ## Enforcement
@@ -109,6 +112,12 @@ One-sentence purpose.
 - `reviewer` subagent MUST verify accessible color contrast for text, controls, and UI surfaces. Default target: WCAG AA, 4.5:1 for normal text and 3:1 for large text and non-text controls.
 - `reviewer` subagent MUST verify semantic HTML and ARIA only where needed; decorative icons should stay decorative, and interactive controls must expose correct labels and states.
 - Missing registry documentation is a **blocking** review comment.
+
+## Testability
+
+- Keep atoms and pure helpers easy to render or call in isolation.
+- Push persistence, document writes, and media-query side effects into state modules, hooks, or services that can be unit tested directly.
+- New atoms, reducers, and utility branches should ship with focused tests that describe behavior rather than implementation details.
 
 ## Exceptions
 
