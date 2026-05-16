@@ -1,0 +1,20 @@
+@use '../../../styles/tokens' as tokens;
+
+.terms-page {
+  &__hero,
+  &__panel {
+    display: grid;
+    gap: tokens.$spacing-sm;
+  }
+
+  &__panel {
+    margin-top: tokens.$spacing-xl;
+  }
+
+  &__list {
+    display: grid;
+    gap: tokens.$spacing-sm;
+    margin: 0;
+    padding-left: tokens.$spacing-xl;
+  }
+}

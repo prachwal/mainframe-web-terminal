@@ -129,6 +129,38 @@ $color-text-primary: #0f172a;
 $color-surface: #ffffff;
 ```
 
+## Color Contract
+
+Color usage MUST follow a clear semantic hierarchy:
+
+- Use semantic document tokens for general text and surfaces:
+  - `var(--color-text)` for body text
+  - `var(--color-text-heading)` for stronger labels and headings
+  - `var(--color-bg)` for page surfaces
+  - `var(--color-border)` for neutral separators
+- Use component-scoped CSS custom properties only when a component needs a distinct surface.
+  - Component-scoped variables MUST be prefixed with the component or feature name, such as
+    `--social-links-text` or `--hero-chip-bg`.
+  - Shared components must not depend directly on another feature's tokens, such as `--hero-*`.
+- For any component shown in both light and dark themes, verify the text color against its final
+  background in both modes.
+- If a component uses decorative or compact control surfaces, expose the color contract at the
+  component root and override it from the host container instead of hard-coding per-child colors.
+
+Example:
+
+```scss
+.social-links {
+  --social-links-text: var(--color-text-heading);
+  --social-links-bg: var(--color-social-bg);
+}
+
+.hero-banner {
+  --social-links-text: var(--hero-chip-text);
+  --social-links-bg: var(--hero-chip-bg);
+}
+```
+
 ## Naming Conventions
 
 ### Variables

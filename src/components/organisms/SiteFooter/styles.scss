@@ -45,11 +45,18 @@
 
     a {
       text-decoration: none;
+    }
+  }
 
-      &:hover,
-      &:focus-visible {
-        text-decoration: underline;
-      }
+  &__navLink {
+    font-size: tokens.$font-size-sm;
+    line-height: tokens.$line-height-normal;
+    color: var(--color-text);
+    text-decoration: none;
+
+    &:hover,
+    &:focus-visible {
+      text-decoration: underline;
     }
   }
 
@@ -65,7 +72,7 @@
 
   @include mixins.media(md) {
     &__links {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-columns: repeat(3, minmax(0, 1fr));
     }
   }
 

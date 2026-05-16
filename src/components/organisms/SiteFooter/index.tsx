@@ -4,20 +4,38 @@ import type { SocialLink } from '@/components/molecules';
 import { Text } from '@/components/atoms';
 import './styles.scss';
 
-const footerLinks = [
+type FooterLinkItem = {
+  label: string;
+  to: string;
+  external?: boolean;
+};
+
+type FooterSection = {
+  title: string;
+  items: FooterLinkItem[];
+};
+
+const footerLinks: FooterSection[] = [
   {
-    title: 'Product',
+    title: 'Resources',
     items: [
-      { label: 'Home', to: '/' },
-      { label: 'Terminal', to: '/terminal' },
-      { label: 'Settings', to: '/settings' },
+      { label: 'Docs', to: 'https://vite.dev', external: true },
+      { label: 'GitHub', to: 'https://github.com', external: true },
     ],
   },
   {
-    title: 'Company',
+    title: 'Support',
     items: [
-      { label: 'About', to: '/about' },
-      { label: 'Docs', to: 'https://vite.dev', external: true },
+      { label: 'Contact', to: '/contact' },
+      { label: 'Accessibility', to: '/accessibility' },
+    ],
+  },
+  {
+    title: 'Legal',
+    items: [
+      { label: 'Privacy', to: '/privacy' },
+      { label: 'Terms', to: '/terms' },
+      { label: 'Status', to: '/status' },
     ],
   },
 ];
@@ -50,11 +68,18 @@ export function SiteFooter() {
               {section.items.map((item) => (
                 <li key={item.label}>
                   {item.external ? (
-                    <a href={item.to} target="_blank" rel="noopener noreferrer">
+                    <a
+                      href={item.to}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="site-footer__navLink"
+                    >
                       {item.label}
                     </a>
                   ) : (
-                    <Link to={item.to}>{item.label}</Link>
+                    <Link to={item.to} className="site-footer__navLink">
+                      {item.label}
+                    </Link>
                   )}
                 </li>
               ))}
@@ -64,7 +89,7 @@ export function SiteFooter() {
       </div>
 
       <div className="site-footer__meta">
-        <SocialLinks links={socialLinks} className="site-footer__social" />
+        <SocialLinks links={socialLinks} className="site-footer__social" labelMode="icon-only" />
         <Text variant="caption" as="span" className="site-footer__legal">
           © 2026 Mainframe Web Terminal. All rights reserved.
         </Text>

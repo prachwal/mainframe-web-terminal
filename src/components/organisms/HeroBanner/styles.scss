@@ -14,6 +14,10 @@
   width: 100%;
   background: var(--hero-surface, #08060d);
   color: var(--hero-on-surface);
+  --social-links-text: var(--hero-chip-text, var(--color-text-heading));
+  --social-links-bg: var(--hero-chip-bg, var(--color-social-bg));
+  --social-links-border: var(--hero-chip-border, var(--color-border));
+  --social-links-shadow: var(--hero-chip-shadow, var(--color-shadow-start));
 
   @include mixins.media(md) {
     min-height: tokens.$spacing-4xl * 9;

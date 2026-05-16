@@ -11,7 +11,6 @@
 
   &__label {
     font-size: tokens.$font-size-md;
-    color: var(--hero-chip-text);
   }
 
   &__item {
@@ -27,10 +26,11 @@
     align-items: center;
     justify-content: center;
     gap: tokens.$spacing-xs;
+    color: var(--social-links-text, var(--color-text-heading));
     box-sizing: border-box;
     border-radius: tokens.$radius-lg;
-    background: var(--hero-chip-bg);
-    border: 1px solid var(--hero-chip-border);
+    background: var(--social-links-bg, var(--color-social-bg));
+    border: 1px solid var(--social-links-border, var(--color-border));
     transition: box-shadow 0.3s;
     @include mixins.responsive-control-surface(
       tokens.$spacing-xs,
@@ -47,8 +47,8 @@
     }
 
     &:hover {
-      box-shadow: var(--hero-chip-shadow) 0 4px 6px -2px,
-        var(--hero-chip-shadow) 0 2px 4px -2px;
+      box-shadow: var(--social-links-shadow, var(--color-shadow-start)) 0 4px 6px -2px,
+        var(--social-links-shadow, var(--color-shadow-start)) 0 2px 4px -2px;
     }
 
     &:focus-visible {
@@ -87,6 +87,30 @@
         overflow: visible;
         clip-path: none;
         white-space: normal;
+      }
+    }
+  }
+
+  &--icon-only {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    gap: tokens.$spacing-sm;
+
+    .social-links__item {
+      flex: 0 0 auto;
+    }
+
+    .social-links__link {
+      gap: 0;
+      padding: tokens.$spacing-xs;
+      min-height: 0;
+      border: 0;
+      background: transparent;
+      border-radius: 0;
+      box-shadow: none;
+
+      &:hover {
+        box-shadow: none;
       }
     }
   }

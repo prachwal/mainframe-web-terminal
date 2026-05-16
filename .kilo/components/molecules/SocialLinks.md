@@ -4,7 +4,7 @@
 Molecule
 
 ## Description
-Responsive list of social media links with icon and label.
+Responsive list of social media links with icon and optional label modes.
 
 ## Props
 
@@ -12,7 +12,7 @@ Responsive list of social media links with icon and label.
 |---|---|---|---|---|
 | `links` | `SocialLink[]` | ✅ | — | Array of link descriptors |
 | `className` | `string` | ❌ | `''` | Extra CSS class |
-| `labelMode` | `'visible' \| 'sr-only' \| 'responsive'` | ❌ | `'visible'` | Control label visibility |
+| `labelMode` | `'visible' \| 'sr-only' \| 'responsive' \| 'icon-only'` | ❌ | `'visible'` | Control label visibility |
 
 ## `SocialLink` type
 | Key | Type | Description |
@@ -41,11 +41,17 @@ const links = [
 - `target="_blank"` is explicit.
 - Icon remains decorative when the link label is visible; link surfaces must preserve WCAG AA contrast.
 - `labelMode="sr-only"` and `labelMode="responsive"` keep labels available to assistive tech.
+- `labelMode="icon-only"` removes the visible label while preserving `aria-label` on the anchor.
 - Links must provide `:focus-visible` states that are visible on both light and dark themes.
 
 ## Styling
 Co-located: `src/components/molecules/SocialLinks/styles.scss`
 Uses the shared icon sprite wrapper.
+- Default colors must come from the semantic document palette.
+- Host surfaces may override `--social-links-text`, `--social-links-bg`, `--social-links-border`, and `--social-links-shadow`.
+- `labelMode="icon-only"` must use a single horizontal row with transparent link surfaces.
+- `labelMode="icon-only"` should be used when the visual treatment is icon-only, such as compact footers.
+- Do not read colors directly from unrelated feature tokens such as `--hero-*`.
 
 ## Testing
 

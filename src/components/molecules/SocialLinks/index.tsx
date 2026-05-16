@@ -11,7 +11,7 @@ export interface SocialLink {
 export interface SocialLinksProps {
   links: SocialLink[];
   className?: string;
-  labelMode?: 'visible' | 'sr-only' | 'responsive';
+  labelMode?: 'visible' | 'sr-only' | 'responsive' | 'icon-only';
 }
 
 export function SocialLinks({ links, className = '', labelMode = 'visible' }: SocialLinksProps) {
@@ -27,7 +27,9 @@ export function SocialLinks({ links, className = '', labelMode = 'visible' }: So
             aria-label={link.name}
           >
             <Icon name={link.iconName} size="sm" decorative />
-            <span className="social-links__label">{link.name}</span>
+            {labelMode !== 'icon-only' ? (
+              <span className="social-links__label">{link.name}</span>
+            ) : null}
           </a>
         </li>
       ))}
