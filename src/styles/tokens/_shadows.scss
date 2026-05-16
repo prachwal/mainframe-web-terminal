@@ -1,0 +1,9 @@
+// Elevation tokens
+$shadow-md:
+  #{$color-shadow-start} 0 10px 15px -3px,
+  #{$color-shadow-end} 0 4px 6px -2px;
+
+// Dark variant (computed in base via data-theme)
+$shadow-md-dark:
+  #{$color-shadow-start-dark} 0 10px 15px -3px,
+  #{$color-shadow-end-dark} 0 4px 6px -2px;

@@ -1,0 +1,39 @@
+@use '../../../../styles/tokens' as tokens;
+@use '../../../../styles/mixins' as mixins;
+
+.heading {
+  font-family: var(--font-heading);
+  font-weight: tokens.$font-weight-medium;
+  color: var(--color-text-heading);
+  margin: 0;
+
+  &--h1 {
+    font-size: tokens.$font-size-3xl;
+    letter-spacing: tokens.$letter-spacing-tight;
+    line-height: tokens.$line-height-tight;
+    margin: tokens.$spacing-2xl 0;
+
+    @include mixins.media(lg) {
+      font-size: tokens.$font-size-2xl;
+      margin: tokens.$spacing-xl 0;
+    }
+  }
+
+  &--h2 {
+    font-size: tokens.$font-size-xl;
+    line-height: tokens.$line-height-tight;
+    letter-spacing: tokens.$letter-spacing-normal;
+    margin-bottom: tokens.$spacing-sm;
+
+    @include mixins.media(lg) {
+      font-size: tokens.$font-size-lg;
+    }
+  }
+
+  &--h3 {
+    font-size: tokens.$font-size-lg;
+    line-height: tokens.$line-height-normal;
+    letter-spacing: tokens.$letter-spacing-normal;
+    margin-bottom: tokens.$spacing-xs;
+  }
+}

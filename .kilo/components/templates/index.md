@@ -1,15 +1,7 @@
 # Templates
 
-Page-level layout skeletons with placeholder content.
+Page-level wireframes composed of organisms.
 
-## Components
-
-| Component | File | Status | Uses |
+| Component | Spec | Uses | Status |
 |---|---|---|---|
-| *(none yet)* | — | — | — |
-
-## Rules
-
-- May import **organisms**, **molecules**, and **atoms**.
-- Do not import pages.
-- Keep data-agnostic; use placeholder / mock content only.
+| [MainLayout](./MainLayout.md) | App shell with site-wide structure | HeroBanner | implemented |

@@ -2,14 +2,9 @@
 
 Fundamental building blocks. Single responsibility, zero internal component dependencies.
 
-## Components
-
-| Component | File | Status |
+| Component | Spec | Status |
 |---|---|---|
-| *(none yet)* | — | — |
-
-## Rules
-
-- May use only React built-ins and external libraries.
-- **Never** import another project component.
-- Keep props minimal and focused.
+| [Button](./Button.md) | Raw button with variants | implemented |
+| [Heading](./Heading.md) | Semantic heading (h1/h2/h3) | implemented |
+| [Text](./Text.md) | Paragraph / inline text with variants | implemented |
+| [Icon](./Icon.md) | Inline SVG icon with preset paths | implemented |

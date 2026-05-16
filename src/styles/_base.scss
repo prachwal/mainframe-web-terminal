@@ -1,0 +1,62 @@
+@use 'tokens' as *;
+
+:root {
+  // Colors
+  --color-text: #{$color-text};
+  --color-text-heading: #{$color-text-heading};
+  --color-bg: #{$color-bg};
+  --color-border: #{$color-border};
+  --color-code-bg: #{$color-code-bg};
+  --color-accent: #{$color-accent};
+  --color-accent-bg: #{$color-accent-bg};
+  --color-accent-border: #{$color-accent-border};
+  --color-social-bg: #{$color-social-bg};
+  --color-shadow-start: #{$color-shadow-start};
+  --color-shadow-end: #{$color-shadow-end};
+
+  // Typography
+  --font-sans: #{$font-sans};
+  --font-heading: #{$font-heading};
+  --font-mono: #{$font-mono};
+
+  font: #{$font-size-lg}/#{$line-height-relaxed} var(--font-sans);
+  letter-spacing: #{$letter-spacing-wide};
+  color-scheme: light dark;
+  color: var(--color-text);
+  background: var(--color-bg);
+  font-synthesis: none;
+
+  @include media(lg) {
+    font-size: #{$font-size-md};
+  }
+}
+
+[data-theme='dark'] {
+  --color-text: #{$color-text-dark};
+  --color-text-heading: #{$color-text-heading-dark};
+  --color-bg: #{$color-bg-dark};
+  --color-border: #{$color-border-dark};
+  --color-code-bg: #{$color-code-bg-dark};
+  --color-accent: #{$color-accent-dark};
+  --color-accent-bg: #{$color-accent-bg-dark};
+  --color-accent-border: #{$color-accent-border-dark};
+  --color-social-bg: #{$color-social-bg-dark};
+  --color-shadow-start: #{$color-shadow-start-dark};
+  --color-shadow-end: #{$color-shadow-end-dark};
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --color-text: #{$color-text-dark};
+    --color-text-heading: #{$color-text-heading-dark};
+    --color-bg: #{$color-bg-dark};
+    --color-border: #{$color-border-dark};
+    --color-code-bg: #{$color-code-bg-dark};
+    --color-accent: #{$color-accent-dark};
+    --color-accent-bg: #{$color-accent-bg-dark};
+    --color-accent-border: #{$color-accent-border-dark};
+    --color-social-bg: #{$color-social-bg-dark};
+    --color-shadow-start: #{$color-shadow-start-dark};
+    --color-shadow-end: #{$color-shadow-end-dark};
+  }
+}

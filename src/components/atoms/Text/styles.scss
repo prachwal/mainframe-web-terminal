@@ -1,0 +1,31 @@
+@use '../../../../styles/tokens' as tokens;
+
+.text {
+  margin: 0;
+
+  &--body {
+    font-family: var(--font-sans);
+    font-size: tokens.$font-size-md;
+    line-height: tokens.$line-height-relaxed;
+    color: var(--color-text);
+  }
+
+  &--muted {
+    font-family: var(--font-sans);
+    font-size: tokens.$font-size-sm;
+    line-height: tokens.$line-height-relaxed;
+    color: var(--color-text);
+    opacity: 0.8;
+  }
+
+  &--code {
+    font-family: var(--font-mono);
+    font-size: tokens.$font-size-sm;
+    line-height: tokens.$line-height-normal;
+    padding: tokens.$spacing-xs tokens.$spacing-sm;
+    background: var(--color-code-bg);
+    border-radius: tokens.$radius-sm;
+    color: var(--color-text-heading);
+    display: inline;
+  }
+}

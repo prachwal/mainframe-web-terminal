@@ -1,0 +1,13 @@
+@use '../../../../styles/tokens' as tokens;
+@use '../../../../styles/mixins' as mixins;
+
+.hero-banner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: tokens.$spacing-xl;
+
+  @include mixins.media(lg) {
+    gap: tokens.$spacing-2xl;
+  }
+}

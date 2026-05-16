@@ -2,13 +2,7 @@
 
 Combinations of atoms; self-contained functional units.
 
-## Components
-
-| Component | File | Status | Uses Atoms |
+| Component | Spec | Uses Atoms | Status |
 |---|---|---|---|
-| *(none yet)* | — | — | — |
-
-## Rules
-
-- May import **atoms** only.
-- Do not import other molecules, organisms, templates, or pages.
+| [HeroSection](./HeroSection.md) | Hero block with title, description, CTA | Heading, Text, Button | implemented |
+| [SocialLinks](./SocialLinks.md) | Social media link list | Icon | implemented |

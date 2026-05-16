@@ -1,14 +1,7 @@
 # Organisms
 
-Complex UI sections composed of molecules and atoms.
+Complex sections composed of molecules and/or atoms.
 
-## Components
-
-| Component | File | Status | Uses |
+| Component | Spec | Uses | Status |
 |---|---|---|---|
-| *(none yet)* | — | — | — |
-
-## Rules
-
-- May import **molecules** and **atoms**.
-- Do not import templates or pages.
+| [HeroBanner](./HeroBanner.md) | Full hero block (HeroSection + SocialLinks) | HeroSection, SocialLinks | implemented |

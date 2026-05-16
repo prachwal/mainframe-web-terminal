@@ -1,0 +1,33 @@
+@use '../../../../styles/tokens' as tokens;
+@use '../../../../styles/mixins' as mixins;
+
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: tokens.$spacing-lg;
+  padding: tokens.$spacing-4xl 0;
+
+  @include mixins.media(lg) {
+    flex-direction: row;
+    text-align: left;
+    gap: tokens.$spacing-3xl;
+  }
+
+  &__content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: tokens.$spacing-md;
+
+    @include mixins.media(lg) {
+      align-items: flex-start;
+    }
+  }
+
+  &__visual {
+    flex: 0 0 auto;
+  }
+}
