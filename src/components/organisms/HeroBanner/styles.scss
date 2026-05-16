@@ -12,8 +12,8 @@
   border-radius: tokens.$radius-xl;
   padding: tokens.$spacing-2xl;
   width: 100%;
-  background: var(--color-text-heading);
-  color: var(--color-bg);
+  background: var(--hero-surface);
+  color: var(--hero-on-surface);
 
   @include mixins.media(md) {
     min-height: tokens.$spacing-4xl * 9;
@@ -37,8 +37,8 @@
     inset: 0;
     z-index: -1;
     background:
-      linear-gradient(90deg, rgba(tokens.$color-gray-900, 0.96) 0%, rgba(tokens.$color-gray-900, 0.82) 46%, rgba(tokens.$color-gray-900, 0.42) 100%),
-      linear-gradient(0deg, rgba(tokens.$color-gray-900, 0.9) 0%, rgba(tokens.$color-gray-900, 0.08) 54%);
+      linear-gradient(90deg, var(--hero-overlay-strong) 0%, var(--hero-overlay-mid) 46%, var(--hero-overlay-soft) 100%),
+      linear-gradient(0deg, var(--hero-overlay-mid) 0%, transparent 54%);
   }
 
   &__content {
@@ -50,17 +50,17 @@
   }
 
   &__eyebrow {
-    color: var(--color-accent);
+    color: var(--hero-accent);
   }
 
   &__title {
-    color: var(--color-bg);
+    color: var(--hero-on-surface);
     max-width: 700px;
   }
 
   &__subtitle {
     max-width: 620px;
-    color: rgba(tokens.$color-white, 0.82);
+    color: var(--hero-muted);
   }
 
   &__actions {
@@ -90,19 +90,19 @@
     }
 
     div {
-      border-left: 2px solid var(--color-accent);
+      border-left: 2px solid var(--hero-accent);
       padding-left: tokens.$spacing-md;
     }
 
     dt {
-      color: var(--color-bg);
+      color: var(--hero-on-surface);
       font-weight: tokens.$font-weight-bold;
       line-height: tokens.$line-height-normal;
     }
 
     dd {
       margin: 0;
-      color: rgba(tokens.$color-white, 0.68);
+      color: var(--hero-subtle);
       font-size: tokens.$font-size-sm;
       line-height: tokens.$line-height-normal;
     }

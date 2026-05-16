@@ -14,6 +14,14 @@
   --color-social-bg: #{$color-social-bg};
   --color-shadow-start: #{$color-shadow-start};
   --color-shadow-end: #{$color-shadow-end};
+  --hero-surface: #{$color-gray-900};
+  --hero-on-surface: #{$color-white};
+  --hero-muted: rgba(#{$color-white}, 0.82);
+  --hero-subtle: rgba(#{$color-white}, 0.68);
+  --hero-overlay-strong: rgba(#{$color-gray-900}, 0.96);
+  --hero-overlay-mid: rgba(#{$color-gray-900}, 0.82);
+  --hero-overlay-soft: rgba(#{$color-gray-900}, 0.42);
+  --hero-accent: #{$color-accent-dark};
 
   // Typography
   --font-sans: #{$font-sans};
@@ -44,6 +52,14 @@
   --color-social-bg: #{$color-social-bg-dark};
   --color-shadow-start: #{$color-shadow-start-dark};
   --color-shadow-end: #{$color-shadow-end-dark};
+  --hero-surface: #{$color-white};
+  --hero-on-surface: #{$color-gray-900};
+  --hero-muted: rgba(#{$color-gray-900}, 0.82);
+  --hero-subtle: rgba(#{$color-gray-900}, 0.68);
+  --hero-overlay-strong: rgba(#{$color-white}, 0.92);
+  --hero-overlay-mid: rgba(#{$color-white}, 0.74);
+  --hero-overlay-soft: rgba(#{$color-white}, 0.3);
+  --hero-accent: #{$color-accent};
 }
 
 @media (prefers-color-scheme: dark) {
@@ -59,5 +75,13 @@
     --color-social-bg: #{$color-social-bg-dark};
     --color-shadow-start: #{$color-shadow-start-dark};
     --color-shadow-end: #{$color-shadow-end-dark};
+    --hero-surface: #{$color-white};
+    --hero-on-surface: #{$color-gray-900};
+    --hero-muted: rgba(#{$color-gray-900}, 0.82);
+    --hero-subtle: rgba(#{$color-gray-900}, 0.68);
+    --hero-overlay-strong: rgba(#{$color-white}, 0.92);
+    --hero-overlay-mid: rgba(#{$color-white}, 0.74);
+    --hero-overlay-soft: rgba(#{$color-white}, 0.3);
+    --hero-accent: #{$color-accent};
   }
 }
