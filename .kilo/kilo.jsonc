@@ -4,7 +4,8 @@
 
   "instructions": [
     "AGENTS.md",
-    ".kilo/rules/*.md"
+    ".kilo/rules/*.md",
+    ".codex/config.toml"
   ],
 
   "permission": {

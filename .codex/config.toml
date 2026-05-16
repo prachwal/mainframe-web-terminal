@@ -1,0 +1,20 @@
+#:schema https://developers.openai.com/codex/config-schema.json
+
+# Project-scoped Codex configuration.
+# Codex loads this file from `.codex/config.toml` after the project is trusted.
+
+approval_policy = "on-request"
+sandbox_mode = "workspace-write"
+model_reasoning_effort = "medium"
+project_root_markers = [".git", ".kilo/kilo.jsonc"]
+project_doc_max_bytes = 65536
+
+developer_instructions = """
+Use AGENTS.md as the primary project guide.
+Treat .kilo/kilo.jsonc as the Kilo Agent Manager configuration source for this repository.
+Load the same project rules Kilo loads from .kilo/rules/*.md, especially atomic-design.md, scss.md, and workflow.md.
+Before changing UI components, inspect .kilo/components/index.md and reuse existing Atomic Design components when possible.
+For styling work, follow .kilo/rules/scss.md and keep component styles co-located.
+For larger tasks, follow .kilo/rules/workflow.md: clarify, plan, branch, implement, verify, review, commit, and merge.
+Kilo-specific command permissions live in .kilo/kilo.jsonc; mirror that intent when requesting approvals in Codex.
+"""
