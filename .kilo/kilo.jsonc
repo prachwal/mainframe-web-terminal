@@ -1,0 +1,22 @@
+{
+  "$schema": "https://app.kilo.ai/config.json",
+  "default_agent": "orchestrator",
+
+  "instructions": [
+    "AGENTS.md",
+    ".kilo/rules/*.md"
+  ],
+
+  "permission": {
+    "bash": {
+      "pnpm dev": "allow",
+      "pnpm build": "allow",
+      "pnpm lint": "allow",
+      "pnpm format": "allow",
+      "pnpm install": "ask",
+      "git checkout -b *": "allow",
+      "git merge *": "ask",
+      "git commit *": "allow"
+    }
+  }
+}
