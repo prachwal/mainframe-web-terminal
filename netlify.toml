@@ -5,6 +5,25 @@ publish = "dist"
 [functions]
 directory = "netlify/functions"
 
+[dev]
+command = "pnpm dev"
+port = 8888
+targetPort = 5173
+framework = "#custom"
+
+# API redirects to Netlify Functions (must come before SPA fallback)
+[[redirects]]
+  from = "/api/:splat"
+  to = "/.netlify/functions/:splat"
+  status = 200
+  force = true
+
+# SPA fallback for client-side routing
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
 # Deploy flow:
 # - create and publish from the git branch `deployment`
 # - keep `main` out of Netlify publishing on purpose

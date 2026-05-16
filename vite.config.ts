@@ -2,6 +2,7 @@ import { defineConfig } from 'vitest/config'
 import react from '@vitejs/plugin-react'
 import { fileURLToPath, URL } from 'node:url'
 import { loadEnv } from 'vite'
+import netlify from "@netlify/vite-plugin";
 
 // https://vite.dev/config/
 export default defineConfig(({ mode }) => {
@@ -14,7 +15,7 @@ export default defineConfig(({ mode }) => {
   } as const
 
   return {
-    plugins: [react()],
+    plugins: [netlify(),react()],
     define: {
       __APP_CONFIG__: JSON.stringify(appConfig),
     },
