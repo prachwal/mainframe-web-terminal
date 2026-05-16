@@ -1,13 +1,21 @@
 @use '../../../styles/tokens' as tokens;
+@use '../../../styles/mixins' as mixins;
 
 .terminal-page {
   &__hero,
-  &__mock {
+  &__panel {
     max-width: 760px;
   }
 
-  &__mock {
+  &__grid {
+    display: grid;
+    gap: tokens.$spacing-xl;
     margin-top: tokens.$spacing-2xl;
+  }
+
+  &__panel {
+    display: grid;
+    gap: tokens.$spacing-lg;
     padding: tokens.$spacing-xl;
     border-radius: tokens.$radius-xl;
     border: 1px solid var(--color-border);
@@ -15,9 +23,68 @@
     color: var(--color-text-heading);
   }
 
-  &__code {
-    margin: tokens.$spacing-sm 0 0;
-    font-family: var(--font-mono);
-    white-space: pre-wrap;
+  &__panelCopy,
+  &__status,
+  &__empty {
+    color: var(--color-text);
+  }
+
+  &__form {
+    display: grid;
+    gap: tokens.$spacing-md;
+  }
+
+  &__field {
+    display: grid;
+    gap: tokens.$spacing-xs;
+  }
+
+  &__fieldLabel {
+    color: var(--color-text-heading);
+  }
+
+  &__input,
+  &__textarea {
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: tokens.$radius-lg;
+    border: 1px solid var(--color-border);
+    background: var(--color-bg);
+    color: var(--color-text-heading);
+    font: inherit;
+    padding: tokens.$spacing-sm tokens.$spacing-md;
+  }
+
+  &__textarea {
+    resize: vertical;
+  }
+
+  &__posts {
+    display: grid;
+    gap: tokens.$spacing-sm;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__post {
+    display: grid;
+    gap: tokens.$spacing-xs;
+    padding-top: tokens.$spacing-sm;
+    border-top: 1px solid var(--color-border);
+  }
+
+  &__postTitle {
+    color: var(--color-text-heading);
+  }
+
+  &__postContent {
+    color: var(--color-text);
+  }
+
+  @include mixins.media(md) {
+    &__grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
   }
 }

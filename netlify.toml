@@ -2,7 +2,9 @@
 command = "pnpm build"
 publish = "dist"
 
+[functions]
+directory = "netlify/functions"
+
 # Deploy flow:
 # - create and publish from the git branch `deployment`
 # - keep `main` out of Netlify publishing on purpose
-

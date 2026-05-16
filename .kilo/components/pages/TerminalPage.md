@@ -4,7 +4,7 @@
 Page
 
 ## Description
-Terminal workspace placeholder page.
+Terminal workspace page with a database-backed post creator and recent posts list.
 
 ## Route
 `/terminal`
@@ -13,6 +13,7 @@ Terminal workspace placeholder page.
 - PageShell (`templates`)
 - Heading (`atoms`)
 - Text (`atoms`)
+- Button (`atoms`)
 
 ## Usage Example
 ```tsx
@@ -22,7 +23,7 @@ import { TerminalPage } from '@/components/pages/TerminalPage';
 ```
 
 ## Accessibility
-- Uses semantic headings and readable static terminal copy.
+- Uses semantic headings, a labeled form, and readable API status feedback.
 
 ## Styling
 Co-located: `src/components/pages/TerminalPage/styles.scss`
@@ -31,3 +32,4 @@ Co-located: `src/components/pages/TerminalPage/styles.scss`
 | Date | Change | Commit |
 |---|---|---|
 | — | Initial implementation | — |
+| 2026-05-16 | Added Netlify Database post creator UI | feat(db) |

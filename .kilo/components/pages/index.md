@@ -6,7 +6,7 @@ Routable views that instantiate templates with real data.
 |---|---|---|---|
 | [HomePage](./HomePage.md) | Landing page | `/` | implemented |
 | [SettingsPage](./SettingsPage.md) | Theme and preferences | `/settings` | implemented |
-| [TerminalPage](./TerminalPage.md) | Terminal workspace placeholder | `/terminal` | implemented |
+| [TerminalPage](./TerminalPage.md) | Terminal workspace + DB creator | `/terminal` | implemented |
 | [AboutPage](./AboutPage.md) | Product overview | `/about` | implemented |
 | [ContactPage](./ContactPage.md) | Contact and support | `/contact` | implemented |
 | [PrivacyPage](./PrivacyPage.md) | Privacy summary | `/privacy` | implemented |
