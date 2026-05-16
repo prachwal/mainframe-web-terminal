@@ -15,6 +15,8 @@
     display: inline-flex;
     align-items: center;
     gap: tokens.$spacing-xs;
+    flex-wrap: wrap;
+    justify-content: flex-end;
   }
 
   &__footer {
@@ -26,6 +28,10 @@
     &__header {
       flex-direction: column;
       align-items: flex-start;
+    }
+
+    &__theme-switch {
+      justify-content: flex-start;
     }
   }
 }

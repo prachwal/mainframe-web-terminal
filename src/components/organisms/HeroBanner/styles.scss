@@ -12,7 +12,7 @@
   border-radius: tokens.$radius-xl;
   padding: tokens.$spacing-2xl;
   width: 100%;
-  background: var(--hero-surface);
+  background: var(--hero-surface, #08060d);
   color: var(--hero-on-surface);
 
   @include mixins.media(md) {
@@ -30,6 +30,7 @@
     object-position: 76% center;
     image-rendering: auto;
     transform: scale(1.08);
+    will-change: transform;
   }
 
   &__shade {
@@ -37,8 +38,13 @@
     inset: 0;
     z-index: -1;
     background:
-      linear-gradient(90deg, var(--hero-overlay-strong) 0%, var(--hero-overlay-mid) 46%, var(--hero-overlay-soft) 100%),
-      linear-gradient(0deg, var(--hero-overlay-mid) 0%, transparent 54%);
+      linear-gradient(
+        90deg,
+        var(--hero-overlay-strong, rgba(8, 6, 13, 0.96)) 0%,
+        var(--hero-overlay-mid, rgba(8, 6, 13, 0.82)) 46%,
+        var(--hero-overlay-soft, rgba(8, 6, 13, 0.42)) 100%
+      ),
+      linear-gradient(0deg, var(--hero-overlay-mid, rgba(8, 6, 13, 0.82)) 0%, transparent 54%);
   }
 
   &__content {
@@ -50,17 +56,17 @@
   }
 
   &__eyebrow {
-    color: var(--hero-accent);
+    color: var(--hero-accent, var(--color-accent));
   }
 
   &__title {
-    color: var(--hero-on-surface);
+    color: var(--hero-on-surface, var(--color-text-heading));
     max-width: 700px;
   }
 
   &__subtitle {
     max-width: 620px;
-    color: var(--hero-muted);
+    color: var(--hero-muted, var(--color-text));
   }
 
   &__actions {
@@ -89,23 +95,24 @@
       grid-template-columns: repeat(3, 1fr);
     }
 
-    div {
-      border: 1px solid var(--hero-chip-border);
+    .hero-banner__signal {
+      border: 1px solid var(--hero-chip-border, var(--color-border));
       border-radius: tokens.$radius-lg;
-      background: var(--hero-chip-bg);
+      background: var(--hero-chip-bg, var(--color-social-bg));
       padding: tokens.$spacing-md;
-      box-shadow: 0 12px 24px -24px var(--hero-chip-shadow);
+      box-shadow: 0 12px 24px -24px var(--hero-chip-shadow, var(--color-shadow-start));
+      backdrop-filter: blur(12px);
     }
 
     dt {
-      color: var(--hero-on-surface);
+      color: var(--hero-on-surface, var(--color-text-heading));
       font-weight: tokens.$font-weight-bold;
       line-height: tokens.$line-height-normal;
     }
 
     dd {
       margin: 0;
-      color: var(--hero-subtle);
+      color: var(--hero-subtle, var(--color-text));
       font-size: tokens.$font-size-sm;
       line-height: tokens.$line-height-normal;
     }

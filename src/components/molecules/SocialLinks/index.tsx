@@ -19,7 +19,7 @@ export function SocialLinks({ links, className = '' }: SocialLinksProps) {
       {links.map((link) => (
         <li key={link.name} className="social-links__item">
           <a href={link.href} target="_blank" rel="noopener noreferrer" className="social-links__link">
-            <Icon name={link.iconName} size="sm" ariaLabel={link.name} />
+            <Icon name={link.iconName} size="sm" decorative />
             <span>{link.name}</span>
           </a>
         </li>

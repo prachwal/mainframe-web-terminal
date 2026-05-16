@@ -14,6 +14,7 @@ export interface IconProps extends Omit<SVGProps<SVGSVGElement>, 'children'> {
   name: IconName;
   size?: 'sm' | 'md' | 'lg';
   ariaLabel?: string;
+  decorative?: boolean;
 }
 
 const ICONS: Record<IconName, string> = {
@@ -38,9 +39,16 @@ const ICON_SIZES = {
   lg: 24,
 } as const;
 
-export function Icon({ name, size = 'md', className = '', ariaLabel, ...rest }: IconProps) {
+export function Icon({
+  name,
+  size = 'md',
+  className = '',
+  ariaLabel,
+  decorative,
+  ...rest
+}: IconProps) {
   const pixelSize = ICON_SIZES[size];
-  const isDecorative = !ariaLabel;
+  const isDecorative = decorative ?? !ariaLabel;
   const classes = ['icon', `icon--${size}`, className].filter(Boolean).join(' ');
 
   return (
@@ -52,7 +60,7 @@ export function Icon({ name, size = 'md', className = '', ariaLabel, ...rest }: 
       className={classes}
       aria-hidden={isDecorative}
       role={isDecorative ? 'presentation' : 'img'}
-      aria-label={ariaLabel}
+      aria-label={!isDecorative ? ariaLabel : undefined}
       focusable="false"
       {...rest}
     >

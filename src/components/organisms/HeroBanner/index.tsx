@@ -25,7 +25,14 @@ export function HeroBanner({
 }: HeroBannerProps) {
   return (
     <section className="hero-banner" aria-labelledby="hero-title">
-      <img className="hero-banner__media" src={heroImage} alt="" />
+      <img
+        className="hero-banner__media"
+        src={heroImage}
+        alt=""
+        aria-hidden="true"
+        loading="eager"
+        fetchPriority="high"
+      />
       <div className="hero-banner__shade" />
       <div className="hero-banner__content">
         {eyebrow ? (
@@ -34,7 +41,9 @@ export function HeroBanner({
           </Text>
         ) : null}
         <Heading level="h1" className="hero-banner__title">
-          <span id="hero-title">{title}</span>
+          <span id="hero-title" tabIndex={-1}>
+            {title}
+          </span>
         </Heading>
         <Text variant="body" className="hero-banner__subtitle">
           {subtitle}
@@ -48,15 +57,15 @@ export function HeroBanner({
           {socialLinks && socialLinks.length > 0 ? <SocialLinks links={socialLinks} /> : null}
         </div>
         <dl className="hero-banner__signals" aria-label="Platform signals">
-          <div>
+          <div className="hero-banner__signal">
             <dt>React 19</dt>
             <dd>UI runtime</dd>
           </div>
-          <div>
+          <div className="hero-banner__signal">
             <dt>Vite</dt>
             <dd>Build system</dd>
           </div>
-          <div>
+          <div className="hero-banner__signal">
             <dt>SCSS</dt>
             <dd>Design tokens</dd>
           </div>

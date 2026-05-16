@@ -35,6 +35,7 @@ import { Button } from '@/components/atoms/Button';
 - `focus-visible` outline in SCSS.
 - Disabled state handled natively.
 - Button foreground/background pairs must preserve WCAG AA contrast in both themes.
+- Prefer explicit `aria-pressed` only for toggle semantics; do not fake inactive states with `disabled`.
 
 ## Styling
 Co-located: `src/components/atoms/Button/styles.scss`

@@ -8,13 +8,13 @@
   margin: 0;
 
   &--h1 {
-    font-size: tokens.$font-size-3xl;
+    font-size: tokens.$font-size-2xl;
     letter-spacing: tokens.$letter-spacing-tight;
     line-height: tokens.$line-height-tight;
     margin: tokens.$spacing-2xl 0;
 
     @include mixins.media(lg) {
-      font-size: tokens.$font-size-2xl;
+      font-size: tokens.$font-size-3xl;
       margin: tokens.$spacing-xl 0;
     }
   }

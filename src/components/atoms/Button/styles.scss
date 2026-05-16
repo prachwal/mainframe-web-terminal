@@ -31,20 +31,20 @@
 
   &--secondary {
     color: var(--color-text-heading);
-    background: var(--button-secondary-bg);
+    background: var(--button-secondary-bg, var(--color-social-bg));
 
     &:hover:not(:disabled) {
-      background: var(--button-secondary-hover);
+      background: var(--button-secondary-hover, var(--color-social-bg));
     }
   }
 
   &--outline {
     color: var(--color-text-heading);
     background: transparent;
-    border-color: var(--button-outline-border);
+    border-color: var(--button-outline-border, var(--color-border));
 
     &:hover:not(:disabled) {
-      background: var(--button-outline-hover);
+      background: var(--button-outline-hover, var(--color-code-bg));
     }
   }
 

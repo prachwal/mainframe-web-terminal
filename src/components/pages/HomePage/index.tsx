@@ -20,18 +20,28 @@ export function HomePage() {
     dispatch(setThemeMode(mode));
   };
 
+  const launchTerminal = () => {
+    const target = document.getElementById('hero-title');
+
+    target?.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+    });
+
+    target?.focus?.();
+  };
+
   return (
     <MainLayout
       className="home-page"
       header={
         <div className="home-page__header">
           <Text variant="label" as="span">Mainframe Web Terminal</Text>
-          <div className="home-page__theme-switch" role="group" aria-label="Theme mode">
+          <div className="home-page__theme-switch" id="theme-switch" role="group" aria-label="Theme mode">
             <Button
               size="sm"
               variant={themeMode === 'light' ? 'secondary' : 'outline'}
               onClick={() => setMode('light')}
-              disabled={themeMode === 'light'}
               aria-pressed={themeMode === 'light'}
             >
               Light
@@ -40,7 +50,6 @@ export function HomePage() {
               size="sm"
               variant={themeMode === 'dark' ? 'secondary' : 'outline'}
               onClick={() => setMode('dark')}
-              disabled={themeMode === 'dark'}
               aria-pressed={themeMode === 'dark'}
             >
               Dark
@@ -49,7 +58,6 @@ export function HomePage() {
               size="sm"
               variant={themeMode === 'system' ? 'secondary' : 'outline'}
               onClick={() => setMode('system')}
-              disabled={themeMode === 'system'}
               aria-pressed={themeMode === 'system'}
             >
               System
@@ -74,6 +82,7 @@ export function HomePage() {
         }
         cta={{
           label: 'Launch terminal',
+          onClick: launchTerminal,
         }}
         socialLinks={socialLinks}
       />

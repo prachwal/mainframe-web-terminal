@@ -38,6 +38,7 @@ const links = [
 - Anchors open in new tab with `rel="noopener noreferrer"`.
 - `target="_blank"` is explicit.
 - Icon remains decorative when the link label is visible; link surfaces must preserve WCAG AA contrast.
+- Links must provide `:focus-visible` states that are visible on both light and dark themes.
 
 ## Styling
 Co-located: `src/components/molecules/SocialLinks/styles.scss`
