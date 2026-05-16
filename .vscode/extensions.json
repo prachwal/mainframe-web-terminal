@@ -1,0 +1,12 @@
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "christian-kohler.path-intellisense",
+    "davidanson.vscode-markdownlint",
+    "editorconfig.editorconfig",
+    "linbudu.pnpm-vscode-helper",
+    "vitest.explorer",
+    "ms-vscode.vscode-typescript-next"
+  ]
+}
