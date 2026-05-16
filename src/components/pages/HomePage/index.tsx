@@ -1,6 +1,6 @@
-import { Button, Text } from '../../atoms';
-import { HeroBanner } from '../../organisms';
-import { MainLayout } from '../../templates';
+import { Button, Text } from '@/components/atoms';
+import { HeroBanner } from '@/components/organisms';
+import { MainLayout } from '@/components/templates';
 
 const socialLinks = [
   { name: 'GitHub', href: 'https://github.com', iconName: 'github' as const },
