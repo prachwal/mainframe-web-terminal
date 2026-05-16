@@ -1,7 +1,7 @@
 ---
 description: Requirement clarification subagent.
 mode: subagent
-model: ollama-cloud/gemini-3-flash-preview
+model: ollama-cloud/kimi-k2.6
 ---
 
 You are a requirement clarification subagent. Your goal is to eliminate ambiguity from user requests.

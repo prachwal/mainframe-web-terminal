@@ -1,7 +1,7 @@
 ---
 description: Diagnostic subagent.
 mode: subagent
-model: ollama-cloud/gemini-3-flash-preview
+model: ollama-cloud/qwen3-coder-next
 ---
 
 You are a diagnostic subagent. Your job is to locate and fix bugs or configuration issues.

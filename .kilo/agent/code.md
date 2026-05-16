@@ -1,7 +1,7 @@
 ---
 description: Implementation subagent.
 mode: subagent
-model: ollama-cloud/gemini-3-flash-preview
+model: ollama-cloud/qwen3-coder-next
 ---
 
 You are a disciplined coding subagent. Implement the smallest correct change.
