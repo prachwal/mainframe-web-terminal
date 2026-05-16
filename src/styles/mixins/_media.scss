@@ -1,21 +1,22 @@
+@use 'sass:map';
 @use '../tokens/breakpoints' as tokens;
 
 @mixin media($size) {
-  @if map-has-key(tokens.$breakpoints, $size) {
-    @media (min-width: map-get(tokens.$breakpoints, $size)) {
+  @if map.has-key(tokens.$breakpoints, $size) {
+    @media (min-width: map.get(tokens.$breakpoints, $size)) {
       @content;
     }
   } @else {
-    @error "Unknown breakpoint: #{$size}. Available: #{map-keys(tokens.$breakpoints)}";
+    @error "Unknown breakpoint: #{$size}. Available: #{map.keys(tokens.$breakpoints)}";
   }
 }
 
 @mixin media-max($size) {
-  @if map-has-key(tokens.$breakpoints, $size) {
-    @media (max-width: (map-get(tokens.$breakpoints, $size) - 1px)) {
+  @if map.has-key(tokens.$breakpoints, $size) {
+    @media (max-width: (map.get(tokens.$breakpoints, $size) - 1px)) {
       @content;
     }
   } @else {
-    @error "Unknown breakpoint: #{$size}. Available: #{map-keys(tokens.$breakpoints)}";
+    @error "Unknown breakpoint: #{$size}. Available: #{map.keys(tokens.$breakpoints)}";
   }
 }

@@ -10,8 +10,9 @@ Lightweight inline SVG icon component with preset path-based set.
 | Prop | Type | Required | Default | Description |
 |---|---|---|---|---|
 | `name` | `IconName` (union, 7 icon types) | ✅ | — | Icon identifier |
-| `size` | `number` | ❌ | `22` | Width and height in pixels |
+| `size` | `'sm' \| 'md' \| 'lg'` | ❌ | `'md'` | Icon size |
 | `className` | `string` | ❌ | `''` | Extra CSS class |
+| `ariaLabel` | `string` | ❌ | — | Accessible label for meaningful icons |
 | `...rest` | `SVGProps<SVGSVGElement>` | ❌ | — | Additional SVG attributes |
 
 ## Supported Icons
@@ -26,12 +27,12 @@ Lightweight inline SVG icon component with preset path-based set.
 import { Icon } from '@/components/atoms/Icon';
 
 <Icon name="github" />
-<Icon name="arrow-right" size={24} />
+<Icon name="arrow-right" size="lg" ariaLabel="Next" />
 ```
 
 ## Accessibility
-- `role="presentation"` and `aria-hidden="true"` by default (decoration).
-- For interactive icons, override with meaningful `aria-label`.
+- Decorative by default.
+- Provide `ariaLabel` when the icon conveys meaning.
 
 ## Styling
 Co-located: `src/components/atoms/Icon/styles.scss`

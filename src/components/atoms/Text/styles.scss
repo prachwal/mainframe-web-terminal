@@ -1,4 +1,4 @@
-@use '../../../../styles/tokens' as tokens;
+@use '../../../styles/tokens' as tokens;
 
 .text {
   margin: 0;
@@ -10,7 +10,7 @@
     color: var(--color-text);
   }
 
-  &--muted {
+  &--caption {
     font-family: var(--font-sans);
     font-size: tokens.$font-size-sm;
     line-height: tokens.$line-height-relaxed;
@@ -18,14 +18,12 @@
     opacity: 0.8;
   }
 
-  &--code {
+  &--label {
     font-family: var(--font-mono);
     font-size: tokens.$font-size-sm;
     line-height: tokens.$line-height-normal;
-    padding: tokens.$spacing-xs tokens.$spacing-sm;
-    background: var(--color-code-bg);
-    border-radius: tokens.$radius-sm;
     color: var(--color-text-heading);
-    display: inline;
+    letter-spacing: tokens.$letter-spacing-wide;
+    text-transform: uppercase;
   }
 }

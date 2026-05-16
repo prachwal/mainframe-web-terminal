@@ -4,17 +4,15 @@
 Organism
 
 ## Description
-Full hero display combining a `HeroSection` with optional social links.
+Full hero display combining a `HeroSection`, hero image, and optional social links.
 
 ## Props
 | Prop | Type | Required | Default | Description |
 |---|---|---|---|---|
 | `title` | `string` | ✅ | — | Hero title |
-| `description` | `string` | ✅ | — | Hero descriptor text |
-| `buttonLabel` | `string` | ✅ | — | CTA button text |
-| `onButtonClick` | `() => void` | ❌ | — | Button click handler |
+| `subtitle` | `ReactNode` | ✅ | — | Hero descriptor content |
+| `cta` | `{ label: string; onClick?: () => void }` | ❌ | — | CTA button object |
 | `socialLinks` | `SocialLink[]` | ❌ | — | Social links rendered below CTA |
-| `visual` | `ReactNode` | ❌ | — | Optional decorative visual |
 
 ## Dependencies
 - HeroSection (`molecules`)
@@ -26,8 +24,8 @@ import { HeroBanner } from '@/components/organisms/HeroBanner';
 
 <HeroBanner
   title="Hello"
-  description="Welcome to the platform."
-  buttonLabel="Get started"
+  subtitle="Welcome to the platform."
+  cta={{ label: 'Get started' }}
   socialLinks={links}
 />
 ```

@@ -17,7 +17,7 @@ Responsive list of social media links with icon and label.
 |---|---|---|
 | `name` | `string` | Accessible label |
 | `href` | `string` | URL |
-| `icon` | `IconName` | Icon from atoms/Icon set |
+| `iconName` | `IconName` | Icon from atoms/Icon set |
 
 ## Dependencies
 - Icon (`atoms`)
@@ -27,8 +27,8 @@ Responsive list of social media links with icon and label.
 import { SocialLinks } from '@/components/molecules/SocialLinks';
 
 const links = [
-  { name: 'GitHub', href: 'https://github.com', icon: 'github' },
-  { name: 'Twitter', href: 'https://x.com', icon: 'twitter' },
+  { name: 'GitHub', href: 'https://github.com', iconName: 'github' },
+  { name: 'Twitter', href: 'https://x.com', iconName: 'twitter' },
 ];
 
 <SocialLinks links={links} />

@@ -1,9 +1,11 @@
-// Elevation tokens
-$shadow-md:
-  #{$color-shadow-start} 0 10px 15px -3px,
-  #{$color-shadow-end} 0 4px 6px -2px;
+// Elevation tokens — uses tokens namespace resolved by parent
+@use '../tokens/colors' as tokens;
 
-// Dark variant (computed in base via data-theme)
+$shadow-md:
+  tokens.$color-shadow-start 0 10px 15px -3px,
+  tokens.$color-shadow-end 0 4px 6px -2px;
+
+// Dark variant
 $shadow-md-dark:
-  #{$color-shadow-start-dark} 0 10px 15px -3px,
-  #{$color-shadow-end-dark} 0 4px 6px -2px;
+  tokens.$color-shadow-start-dark 0 10px 15px -3px,
+  tokens.$color-shadow-end-dark 0 4px 6px -2px;

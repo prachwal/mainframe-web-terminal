@@ -4,13 +4,14 @@
 Atom
 
 ## Description
-Interactive element with three visual variants: primary (accent), secondary (subtle), ghost (transparent).
+Interactive element with three visual variants: primary (accent), secondary (subtle), outline (transparent).
 
 ## Props
 | Prop | Type | Required | Default | Description |
 |---|---|---|---|---|
 | `children` | `ReactNode` | ✅ | — | Button label |
-| `variant` | `'primary' \| 'secondary' \| 'ghost'` | ❌ | `'primary'` | Visual style |
+| `variant` | `'primary' \| 'secondary' \| 'outline'` | ❌ | `'primary'` | Visual style |
+| `size` | `'sm' \| 'md' \| 'lg'` | ❌ | `'md'` | Button size |
 | `onClick` | `() => void` | ❌ | — | Click handler |
 | `type` | `'button' \| 'submit' \| 'reset'` | ❌ | `'button'` | HTML type |
 | `disabled` | `boolean` | ❌ | `false` | Disabled state |
@@ -24,7 +25,7 @@ Interactive element with three visual variants: primary (accent), secondary (sub
 ```tsx
 import { Button } from '@/components/atoms/Button';
 
-<Button variant="primary" onClick={() => console.log('clicked')}>
+<Button variant="primary" size="lg" onClick={() => console.log('clicked')}>
   Submit
 </Button>
 ```

@@ -4,18 +4,14 @@
 Template
 
 ## Description
-App shell wrapper: renders the global `HeroBanner` and a flexible main content area.
+App shell wrapper with optional `header` and `footer` slots around the main content area.
 
 ## Props
 | Prop | Type | Required | Default | Description |
 |---|---|---|---|---|
+| `header` | `ReactNode` | ❌ | — | Optional header slot |
 | `children` | `ReactNode` | ✅ | — | Page content inside `<main>` |
-| `heroTitle` | `string` | ✅ | — | Title forwarded to HeroBanner |
-| `heroDescription` | `string` | ✅ | — | Description forwarded to HeroBanner |
-| `heroButtonLabel` | `string` | ✅ | — | CTA label forwarded to HeroBanner |
-| `onHeroButtonClick` | `() => void` | ❌ | — | CTA handler forwarded |
-| `socialLinks` | `SocialLink[]` | ❌ | — | Social links forwarded |
-| `heroVisual` | `ReactNode` | ❌ | — | Visual forwarded |
+| `footer` | `ReactNode` | ❌ | — | Optional footer slot |
 
 ## Dependencies
 - HeroBanner (`organisms`)
@@ -24,18 +20,14 @@ App shell wrapper: renders the global `HeroBanner` and a flexible main content a
 ```tsx
 import { MainLayout } from '@/components/templates/MainLayout';
 
-<MainLayout
-  heroTitle="App"
-  heroDescription="Description"
-  heroButtonLabel="CTA"
->
+<MainLayout header={<header>Top</header>} footer={<footer>Bottom</footer>}>
   <p>Page content here.</p>
 </MainLayout>
 ```
 
 ## Accessibility
 - Uses `<main>` for content region.
-- HeroBanner uses `<section>` (see its spec).
+- Content region uses `<main>` (see page specs for composition).
 
 ## Styling
 Co-located: `src/components/templates/MainLayout/styles.scss`

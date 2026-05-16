@@ -4,14 +4,14 @@
 Page
 
 ## Description
-Landing page composed of `MainLayout` with social links.
+Landing page composed of `MainLayout` with `HeroBanner` and supporting footer/header content.
 
 ## Route
 `/`
 
 ## Dependencies
 - MainLayout (`templates`)
-- SocialLinks (`molecules`)
+- HeroBanner (`organisms`)
 
 ## Usage Example
 ```tsx

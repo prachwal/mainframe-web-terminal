@@ -4,13 +4,13 @@
 Atom
 
 ## Description
-Paragraph or inline text element with visual variants: body, muted, code.
+Paragraph or inline text element with visual variants: body, caption, label.
 
 ## Props
 | Prop | Type | Required | Default | Description |
 |---|---|---|---|---|
 | `children` | `ReactNode` | ✅ | — | Text content |
-| `variant` | `'body' \| 'muted' \| 'code'` | ❌ | `'body'` | Visual variant |
+| `variant` | `'body' \| 'caption' \| 'label'` | ❌ | `'body'` | Visual variant |
 | `as` | `'span' \| 'p' \| 'div'` | ❌ | `'p'` | HTML element |
 | `className` | `string` | ❌ | `''` | Extra CSS class |
 
@@ -23,8 +23,8 @@ Paragraph or inline text element with visual variants: body, muted, code.
 import { Text } from '@/components/atoms/Text';
 
 <Text>Regular paragraph</Text>
-<Text variant="muted">Secondary description</Text>
-<Text variant="code">const x = 1;</Text>
+<Text variant="caption">Secondary description</Text>
+<Text variant="label">Status</Text>
 ```
 
 ## Accessibility

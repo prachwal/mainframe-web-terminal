@@ -12,7 +12,8 @@ export type IconName =
 
 export interface IconProps extends Omit<SVGProps<SVGSVGElement>, 'children'> {
   name: IconName;
-  size?: number;
+  size?: 'sm' | 'md' | 'lg';
+  ariaLabel?: string;
 }
 
 const ICONS: Record<IconName, string> = {
@@ -31,16 +32,28 @@ const ICONS: Record<IconName, string> = {
     'M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z',
 };
 
-export function Icon({ name, size = 22, className = '', ...rest }: IconProps) {
+const ICON_SIZES = {
+  sm: 16,
+  md: 20,
+  lg: 24,
+} as const;
+
+export function Icon({ name, size = 'md', className = '', ariaLabel, ...rest }: IconProps) {
+  const pixelSize = ICON_SIZES[size];
+  const isDecorative = !ariaLabel;
+  const classes = ['icon', `icon--${size}`, className].filter(Boolean).join(' ');
+
   return (
     <svg
-      width={size}
-      height={size}
+      width={pixelSize}
+      height={pixelSize}
       viewBox="0 0 24 24"
       fill="currentColor"
-      className={`icon ${className}`.trim()}
-      aria-hidden="true"
-      role="presentation"
+      className={classes}
+      aria-hidden={isDecorative}
+      role={isDecorative ? 'presentation' : 'img'}
+      aria-label={ariaLabel}
+      focusable="false"
       {...rest}
     >
       <path d={ICONS[name]} />

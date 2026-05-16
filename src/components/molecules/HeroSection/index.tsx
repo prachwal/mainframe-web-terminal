@@ -1,30 +1,35 @@
 import type { ReactNode } from 'react';
-import { Heading } from '../../atoms/Heading';
-import { Text } from '../../atoms/Text';
-import { Button } from '../../atoms/Button/Button';
+import { Heading } from '../../atoms';
+import { Text } from '../../atoms';
+import { Button } from '../../atoms';
 import './styles.scss';
 
 export interface HeroSectionProps {
   title: string;
-  description: string;
-  buttonLabel: string;
-  onButtonClick?: () => void;
+  subtitle: ReactNode;
+  cta?: {
+    label: string;
+    onClick?: () => void;
+  };
   children?: ReactNode;
 }
 
 export function HeroSection({
   title,
-  description,
-  buttonLabel,
-  onButtonClick,
+  subtitle,
+  cta,
   children,
 }: HeroSectionProps) {
   return (
     <section className="hero-section">
       <div className="hero-section__content">
         <Heading level="h1">{title}</Heading>
-        <Text variant="body">{description}</Text>
-        <Button onClick={onButtonClick}>{buttonLabel}</Button>
+        <Text variant="body">{subtitle}</Text>
+        {cta ? (
+          <Button onClick={cta.onClick} size="lg">
+            {cta.label}
+          </Button>
+        ) : null}
       </div>
       {children && <div className="hero-section__visual">{children}</div>}
     </section>

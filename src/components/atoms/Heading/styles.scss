@@ -1,5 +1,5 @@
-@use '../../../../styles/tokens' as tokens;
-@use '../../../../styles/mixins' as mixins;
+@use '../../../styles/tokens' as tokens;
+@use '../../../styles/mixins' as mixins;
 
 .heading {
   font-family: var(--font-heading);
@@ -35,5 +35,27 @@
     line-height: tokens.$line-height-normal;
     letter-spacing: tokens.$letter-spacing-normal;
     margin-bottom: tokens.$spacing-xs;
+  }
+
+  &--h4 {
+    font-size: tokens.$font-size-md;
+    line-height: tokens.$line-height-normal;
+    letter-spacing: tokens.$letter-spacing-normal;
+    margin-bottom: tokens.$spacing-xs;
+  }
+
+  &--h5 {
+    font-size: tokens.$font-size-sm;
+    line-height: tokens.$line-height-normal;
+    letter-spacing: tokens.$letter-spacing-normal;
+    margin-bottom: tokens.$spacing-xs;
+  }
+
+  &--h6 {
+    font-size: tokens.$font-size-xs;
+    line-height: tokens.$line-height-normal;
+    letter-spacing: tokens.$letter-spacing-wide;
+    margin-bottom: tokens.$spacing-xs;
+    text-transform: uppercase;
   }
 }

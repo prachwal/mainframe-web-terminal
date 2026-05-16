@@ -4,12 +4,12 @@
 Atom
 
 ## Description
-Semantic heading element (`h1` / `h2` / `h3`) with responsive font sizing.
+Semantic heading element (`h1` through `h6`) with responsive font sizing.
 
 ## Props
 | Prop | Type | Required | Default | Description |
 |---|---|---|---|---|
-| `level` | `'h1' \| 'h2' \| 'h3'` | ❌ | `'h1'` | HTML heading level |
+| `level` | `'h1' \| 'h2' \| 'h3' \| 'h4' \| 'h5' \| 'h6'` | ❌ | `'h1'` | HTML heading level |
 | `children` | `ReactNode` | ✅ | — | Heading text |
 | `className` | `string` | ❌ | `''` | Extra CSS class |
 

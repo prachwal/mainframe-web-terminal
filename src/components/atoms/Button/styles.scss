@@ -1,5 +1,4 @@
-@use '../../../../styles/tokens' as tokens;
-@use '../../../../styles/mixins' as mixins;
+@use '../../../styles/tokens' as tokens;
 
 .button {
   display: inline-flex;
@@ -40,13 +39,29 @@
     }
   }
 
-  &--ghost {
-    color: var(--color-text);
+  &--outline {
+    color: var(--color-text-heading);
     background: transparent;
+    border-color: var(--color-border);
 
     &:hover:not(:disabled) {
-      background: var(--color-code-bg);
+      background: var(--color-social-bg);
     }
+  }
+
+  &--sm {
+    font-size: tokens.$font-size-sm;
+    padding: tokens.$spacing-xs tokens.$spacing-sm;
+  }
+
+  &--md {
+    font-size: tokens.$font-size-md;
+    padding: tokens.$spacing-sm tokens.$spacing-md;
+  }
+
+  &--lg {
+    font-size: tokens.$font-size-lg;
+    padding: tokens.$spacing-md tokens.$spacing-lg;
   }
 
   &:focus-visible {

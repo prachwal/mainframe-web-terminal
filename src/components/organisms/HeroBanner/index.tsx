@@ -1,35 +1,36 @@
 import type { ReactNode } from 'react';
-import { HeroSection } from '../../molecules/HeroSection';
-import { SocialLinks } from '../../molecules/SocialLinks';
-import type { SocialLink } from '../../molecules/SocialLinks/SocialLinks';
+import heroImage from '../../../assets/hero.png';
+import { HeroSection } from '../../molecules';
+import { SocialLinks } from '../../molecules';
+import type { SocialLink } from '../../molecules';
 import './styles.scss';
 
 export interface HeroBannerProps {
   title: string;
-  description: string;
-  buttonLabel: string;
-  onButtonClick?: () => void;
+  subtitle: ReactNode;
+  cta?: {
+    label: string;
+    onClick?: () => void;
+  };
   socialLinks?: SocialLink[];
-  visual?: ReactNode;
 }
 
 export function HeroBanner({
   title,
-  description,
-  buttonLabel,
-  onButtonClick,
+  subtitle,
+  cta,
   socialLinks,
-  visual,
 }: HeroBannerProps) {
   return (
     <div className="hero-banner">
       <HeroSection
         title={title}
-        description={description}
-        buttonLabel={buttonLabel}
-        onButtonClick={onButtonClick}
+        subtitle={subtitle}
+        cta={cta}
       >
-        {visual}
+        <figure className="hero-banner__figure">
+          <img className="hero-banner__image" src={heroImage} alt="" />
+        </figure>
       </HeroSection>
       {socialLinks && socialLinks.length > 0 && (
         <SocialLinks links={socialLinks} />

@@ -1,11 +1,13 @@
 import type { ReactNode } from 'react';
 import './styles.scss';
 
-export type ButtonVariant = 'primary' | 'secondary' | 'ghost';
+export type ButtonVariant = 'primary' | 'secondary' | 'outline';
+export type ButtonSize = 'sm' | 'md' | 'lg';
 
 export interface ButtonProps {
   children: ReactNode;
   variant?: ButtonVariant;
+  size?: ButtonSize;
   onClick?: () => void;
   type?: 'button' | 'submit' | 'reset';
   disabled?: boolean;
@@ -15,16 +17,20 @@ export interface ButtonProps {
 export function Button({
   children,
   variant = 'primary',
+  size = 'md',
   onClick,
   type = 'button',
   disabled = false,
   className = '',
 }: ButtonProps) {
-  const variantClass = `button--${variant}`;
+  const classes = ['button', `button--${variant}`, `button--${size}`, className]
+    .filter(Boolean)
+    .join(' ');
+
   return (
     <button
       type={type}
-      className={`button ${variantClass} ${className}`.trim()}
+      className={classes}
       onClick={onClick}
       disabled={disabled}
     >

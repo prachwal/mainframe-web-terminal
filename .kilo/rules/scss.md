@@ -55,6 +55,21 @@ src/
 
 ## Import Rules
 
+### Sass Built-in Modules
+
+Do **not** use deprecated global built-in functions like `map-get`, `map-has-key`, or `map-keys`.
+Always import the relevant Sass module explicitly and use namespaced calls:
+
+```scss
+@use 'sass:map';
+
+@if map.has-key($breakpoints, md) {
+  width: map.get($breakpoints, md);
+}
+```
+
+This rule applies to all component styles, mixins, and global style utilities.
+
 ### Global Entry (`src/styles/main.scss`)
 
 ```scss

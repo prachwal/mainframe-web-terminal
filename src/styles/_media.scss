@@ -1,0 +1,13 @@
+@use 'sass:map';
+@use 'tokens/breakpoints' as *;
+
+@mixin media($size) {
+  $bp: map.get($breakpoints, $size);
+  @if $bp {
+    @media (max-width: $bp) {
+      @content;
+    }
+  } @else {
+    @warn "Unknown breakpoint: #{$size}";
+  }
+}

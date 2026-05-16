@@ -4,15 +4,14 @@
 Molecule
 
 ## Description
-Hero block with title, description, and primary CTA button. Optionally renders a visual element below.
+Hero block with title, subtitle, and optional CTA object. Optionally renders a visual element below.
 
 ## Props
 | Prop | Type | Required | Default | Description |
 |---|---|---|---|---|
 | `title` | `string` | ✅ | — | Bold heading |
-| `description` | `string` | ✅ | — | Body text |
-| `buttonLabel` | `string` | ✅ | — | CTA button label |
-| `onButtonClick` | `() => void` | ❌ | — | Button click handler |
+| `subtitle` | `ReactNode` | ✅ | — | Supporting content below title |
+| `cta` | `{ label: string; onClick?: () => void }` | ❌ | — | Optional CTA object |
 | `children` | `ReactNode` | ❌ | — | Optional visual placed below content |
 
 ## Dependencies
@@ -26,8 +25,8 @@ import { HeroSection } from '@/components/molecules/HeroSection';
 
 <HeroSection
   title="Get started"
-  description="Edit src/App.tsx and save to test HMR."
-  buttonLabel="Count is 0"
+  subtitle="Edit src/App.tsx and save to test HMR."
+  cta={{ label: 'Explore the terminal' }}
 />
 ```
 

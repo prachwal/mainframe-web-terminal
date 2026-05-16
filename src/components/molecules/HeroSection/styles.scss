@@ -1,5 +1,5 @@
-@use '../../../../styles/tokens' as tokens;
-@use '../../../../styles/mixins' as mixins;
+@use '../../../styles/tokens' as tokens;
+@use '../../../styles/mixins' as mixins;
 
 .hero-section {
   display: flex;
@@ -8,6 +8,7 @@
   text-align: center;
   gap: tokens.$spacing-lg;
   padding: tokens.$spacing-4xl 0;
+  width: 100%;
 
   @include mixins.media(lg) {
     flex-direction: row;
@@ -29,5 +30,7 @@
 
   &__visual {
     flex: 0 0 auto;
+    max-width: 420px;
+    width: 100%;
   }
 }

@@ -1,13 +1,28 @@
-@use '../../../../styles/tokens' as tokens;
-@use '../../../../styles/mixins' as mixins;
+@use '../../../styles/tokens' as tokens;
+@use '../../../styles/mixins' as mixins;
 
 .hero-banner {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: tokens.$spacing-xl;
+  width: 100%;
 
   @include mixins.media(lg) {
     gap: tokens.$spacing-2xl;
+  }
+
+  &__figure {
+    margin: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__image {
+    width: min(100%, 420px);
+    border-radius: tokens.$radius-xl;
+    box-shadow: var(--color-shadow-start) 0 24px 48px -16px,
+      var(--color-shadow-end) 0 16px 32px -16px;
   }
 }

@@ -1,38 +1,22 @@
 import type { ReactNode } from 'react';
-import { HeroBanner } from '../organisms/HeroBanner';
-import type { SocialLink } from '../organisms/HeroBanner/HeroBanner';
 import './styles.scss';
 
 export interface MainLayoutProps {
+  header?: ReactNode;
   children: ReactNode;
-  heroTitle: string;
-  heroDescription: string;
-  heroButtonLabel: string;
-  onHeroButtonClick?: () => void;
-  socialLinks?: SocialLink[];
-  heroVisual?: ReactNode;
+  footer?: ReactNode;
 }
 
 export function MainLayout({
+  header,
   children,
-  heroTitle,
-  heroDescription,
-  heroButtonLabel,
-  onHeroButtonClick,
-  socialLinks,
-  heroVisual,
+  footer,
 }: MainLayoutProps) {
   return (
     <div className="main-layout">
-      <HeroBanner
-        title={heroTitle}
-        description={heroDescription}
-        buttonLabel={heroButtonLabel}
-        onButtonClick={onHeroButtonClick}
-        socialLinks={socialLinks}
-        visual={heroVisual}
-      />
+      {header ? <header className="main-layout__header">{header}</header> : null}
       <main className="main-layout__content">{children}</main>
+      {footer ? <footer className="main-layout__footer">{footer}</footer> : null}
     </div>
   );
 }

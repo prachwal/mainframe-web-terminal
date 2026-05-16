@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 import './styles.scss';
 
-export type TextVariant = 'body' | 'muted' | 'code';
+export type TextVariant = 'body' | 'caption' | 'label';
 
 export interface TextProps {
   children: ReactNode;

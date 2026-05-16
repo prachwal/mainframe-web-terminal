@@ -1,11 +1,11 @@
-import { Icon } from '../../atoms/Icon';
-import type { IconName } from '../../atoms/Icon/Icon';
+import { Icon } from '../../atoms';
+import type { IconName } from '../../atoms';
 import './styles.scss';
 
 export interface SocialLink {
   name: string;
   href: string;
-  icon: IconName;
+  iconName: IconName;
 }
 
 export interface SocialLinksProps {
@@ -19,7 +19,7 @@ export function SocialLinks({ links, className = '' }: SocialLinksProps) {
       {links.map((link) => (
         <li key={link.name} className="social-links__item">
           <a href={link.href} target="_blank" rel="noopener noreferrer" className="social-links__link">
-            <Icon name={link.icon} size={18} />
+            <Icon name={link.iconName} size="sm" ariaLabel={link.name} />
             <span>{link.name}</span>
           </a>
         </li>
